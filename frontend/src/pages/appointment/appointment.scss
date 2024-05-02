@@ -1,0 +1,59 @@
+@import "../../globalscss/global.scss";
+.booking_maincontainer {
+  border: 1px solid green;
+  padding: 100px 0px;
+  max-width: 1800px;
+  background: url("https://img.freepik.com/free-vector/green-background-design_1399-14.jpg?size=626&ext=jpg&ga=GA1.1.324249858.1698056196&semt=ais")
+    center/cover no-repeat;
+  @include flex(column, null, null, 20px);
+  h1 {
+    color: var(--icon-bg);
+  }
+  .booking_subcontainer {
+    flex: 1;
+    @include flex(row, center, center, 0px);
+
+    form {
+      width: 40%;
+      @include flex(column, center, null, 10px);
+      .input_container {
+        display: grid;
+        width: 100%;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+        label {
+          // @include flex(column, null, null, 10px);
+          &.radio_container {
+            @include flex(row, center, null, 5px);
+          }
+          h4 {
+            margin: 5px;
+            color: var(--icon-bg);
+          }
+          input[type="text"],
+          input[type="number"],
+          input[type="email"] {
+            border: none;
+            background-color: transparent;
+            border-bottom: 1px solid var(--theme-color);
+            outline: none;
+            width: 100%;
+            padding: 10px 5px;
+            &::placeholder {
+              color: rgb(44, 38, 38);
+            }
+          }
+        }
+      }
+      button {
+        width: 100px;
+        padding: 10px;
+        border-radius: 20px;
+        color: white;
+        background-color: var(--theme-color);
+      }
+    }
+  }
+}

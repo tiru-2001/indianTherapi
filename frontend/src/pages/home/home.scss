@@ -1,0 +1,570 @@
+@import "../../globalscss/global.scss";
+@import "../../globalscss/responsivemixins.scss";
+.home_container {
+  .section1_container {
+    height: 90vh;
+    @include break(600px) {
+      height: 85vh;
+    }
+    @include break(300px) {
+      height: 65vh;
+    }
+  }
+
+  // section3 stars
+  .section3_container {
+    padding: 120px 0px;
+    @include flex(column, null, null, 40px);
+
+    background-color: var(--lightgreenbg);
+
+    @include break(600px) {
+      h1 {
+        font-size: 2.2rem;
+        padding: 0px 5px;
+      }
+    }
+
+    @include break(300px) {
+      h1 {
+        font-size: 2rem;
+      }
+      p {
+        font-size: 1.2rem;
+      }
+    }
+
+    .section3_content {
+      @include break(300px) {
+        padding: 0px 10px;
+      }
+    }
+  }
+
+  // section5 starts
+  .section5_container {
+    padding: 150px 0px;
+    background-color: var(--color4);
+    @include flex(column, center, null, 100px);
+
+    @include break(600px) {
+      h1 {
+        font-size: 2.5rem;
+      }
+    }
+
+    @include break(300px) {
+      h1 {
+        font-size: 2rem;
+      }
+    }
+    .section5_heading {
+      text-align: center;
+      @include break(600px) {
+        h1 {
+          font-size: 2.2rem;
+        }
+      }
+
+      @include break(300px) {
+        h1 {
+          font-size: 1.6rem;
+        }
+      }
+    }
+
+    .section5_content {
+      @include flex(row, null, center, 150px);
+      flex: 1;
+      flex-wrap: wrap;
+      @include break(1220px) {
+        p {
+          text-align: left;
+        }
+      }
+      @include break(350px) {
+        gap: 50px;
+      }
+    }
+  }
+
+  // section9_container
+  .section9_container {
+    background: url("https://img.freepik.com/free-photo/copy-space-paper-flowers-ornaments_23-2148480110.jpg?w=996")
+      center/cover no-repeat fixed;
+    padding: 80px 20px;
+    @include flex(row, center, null, 10px);
+    @include break(700px) {
+      @include flex(column, center, null, null);
+      height: 100%;
+      padding: 80px 0px;
+    }
+
+    .left {
+      flex: 1;
+      @include flex(row, center, center, 30px);
+      @include break(1000px) {
+      }
+
+      .left_content {
+        padding: 50px;
+        @include flex(column, null, null, 30px);
+
+        @include break(1000px) {
+          padding: 10px;
+          width: 100%;
+        }
+
+        @include break(824px) {
+          @include flex(column, null, null, 10px);
+          padding: 20px;
+        }
+        h5 {
+          font-size: 600;
+          font-size: 1.3rem;
+          color: var(--gray);
+        }
+
+        .left_heading {
+          h1 {
+            text-align: start;
+            @include break(824px) {
+              font-size: 2.5rem;
+            }
+          }
+        }
+
+        .left_desc {
+          p {
+            line-height: 30px;
+            font-size: 1.1rem;
+            font-weight: 400;
+            @include break(650px) {
+              line-height: 25px;
+              padding: 5px 10px;
+            }
+            @include break(350px) {
+              text-align: left;
+            }
+          }
+        }
+
+        .left_bottom_container {
+          @include flex(row, center, null, 10px);
+
+          @include break(824px) {
+            @include flex(row, center, null, 5px);
+            h5 {
+              font-size: 1.2rem;
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+
+    .img_container {
+      height: 450px;
+      width: 450px;
+      overflow: hidden;
+      @include break(800px) {
+        height: 400px;
+        width: 400px;
+      }
+      @include break(400px) {
+        height: 280px;
+        width: 280px;
+      }
+      @include break(400px) {
+        height: 250px;
+        width: 100%;
+      }
+      img {
+        border-radius: 50px;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  // section10
+  .section10_container {
+    background-color: var(--lightgreenbg);
+
+    @include flex(row, center, center, 10px);
+    height: 90vh;
+    padding: 10px 30px;
+    @include break(1250px) {
+      height: 100%;
+    }
+    @include break(900px) {
+      padding: 50px 20px;
+      height: 100%;
+      @include flex(row, flex-start, null, 10px);
+    }
+    @include break(800px) {
+      @include flex(column, center, null, 10px);
+    }
+
+    .left {
+      position: relative;
+      @include flex(column, center, center, null);
+      flex: 1;
+
+      .left_top_image {
+        @include flex(row, center, center, 0px);
+        padding: 10px;
+        border-radius: 50%;
+        background-color: var(--white);
+        position: absolute;
+        top: -40px;
+        left: 100px;
+
+        img {
+          object-fit: cover;
+          border-radius: 50%;
+          height: 200px;
+          width: 200px;
+          @include break(600px) {
+            width: 150px;
+            height: 150px;
+          }
+
+          @include break(400px) {
+            width: 120px;
+            height: 120px;
+          }
+          @include break(300px) {
+            width: 100px;
+            height: 100px;
+          }
+        }
+      }
+
+      .left_bottom_image {
+        @include flex(row, center, center, 0px);
+        padding: 10px;
+        border-radius: 50%;
+
+        img {
+          height: 450px;
+          width: 450px;
+          border-radius: 50%;
+          object-fit: cover;
+          @include break(600px) {
+            width: 350px;
+            height: 350px;
+          }
+
+          @include break(400px) {
+            width: 280px;
+            height: 280px;
+          }
+          @include break(300px) {
+            width: 200px;
+            height: 200px;
+          }
+        }
+      }
+    }
+  }
+
+  //section11 starts
+  .section11_container {
+    background: url("https://gracethemesdemo.com/psyclone/wp-content/themes/psyclone-pro/images/section8.jpg")
+      center/cover no-repeat fixed;
+    height: 60vh;
+    @include flex(row, null, center, 0px);
+    @include break(800px) {
+      height: 100%;
+      padding: 30px 0px;
+    }
+    @include break(800px) {
+      @include flex(column, null, center, 0px);
+    }
+
+    .left {
+      flex-basis: 40%;
+      padding: 0 30px;
+      color: var(--white);
+      @include flex(column, null, center, 30px);
+      @include break(600px) {
+        h2 {
+          font-size: 2rem;
+        }
+      }
+
+      p {
+        font-size: 1.1rem;
+        font-weight: 400;
+      }
+    }
+
+    .right {
+      @include flex(row, center, flex-start, 10px);
+      flex-basis: 40%;
+
+      .right_content {
+        flex-wrap: wrap;
+        @include flex(row, center, center, 20px);
+
+        section {
+          text-align: center;
+          height: 150px;
+          flex-basis: 35%;
+          @include flex(column, center, center, 0px);
+          h1 {
+            color: var(--white);
+            @include break(600px) {
+              font-size: 2.2rem;
+            }
+          }
+
+          p {
+            padding: 10px 0px;
+            color: var(--yellow);
+            font-size: 1.1rem;
+          }
+        }
+      }
+    }
+  }
+
+  //section12 container starts
+  .section12_container {
+    width: 100%;
+    margin: 100px auto;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+
+    .section12_heading {
+      text-align: center;
+      padding: 0 50px;
+
+      @include break(400px) {
+        h1 {
+          font-size: 2.3rem;
+        }
+      }
+
+      @include break(300px) {
+        h1 {
+          font-size: 2rem;
+        }
+      }
+      p {
+        line-height: 30px;
+        font-size: 1.1rem;
+        font-weight: 400;
+        @include break(400px) {
+          h1 {
+            line-height: 25px;
+          }
+        }
+      }
+    }
+
+    .section12_content {
+      @include flex(row, null, center, 15px);
+      flex: 1;
+      flex-wrap: wrap;
+    }
+  }
+}
+
+// section13 container
+.section13_container {
+  display: flex;
+  width: 80%;
+  margin: 50px auto;
+  box-shadow: 0px 0px 13px -3px var(--gray);
+  gap: 20px;
+  @include break(600px) {
+    width: 90%;
+  }
+  @include break(500px) {
+    @include flex(column, null, null, 0px);
+  }
+
+  .left {
+    flex: 1;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .right {
+    flex: 2;
+    padding: 10px 12px;
+    @include flex(column, null, center, 20px);
+
+    h3 {
+      font-size: 2rem;
+      font-weight: 600;
+      @include break(800px) {
+        font-size: 1.8rem;
+      }
+      @include break(600px) {
+        font-size: 1.5rem;
+      }
+    }
+
+    .right_bottom_container {
+      display: flex;
+      gap: 20px;
+      @include break(390px) {
+        @include flex(column, null, null, 10px);
+      }
+      .contact_details {
+        @include flex(row, center, null, 10px);
+
+        .contact_content {
+          @include flex(column, null, null, 5px);
+          font-size: 1.1rem;
+          font-weight: 600;
+
+          p {
+            color: var(--redbrown);
+          }
+        }
+      }
+    }
+  }
+}
+
+// Section 14
+.section14_container {
+  @include flex(column, center, null, 0px);
+  padding: 3.5rem 0;
+  text-align: center;
+  max-width: 1170px;
+  margin: 30px auto;
+
+  .heading_14 {
+    .title {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--title);
+      margin-bottom: 5px;
+    }
+
+    .subtitle_large {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    p {
+      max-width: 540px;
+      margin: 0 auto;
+    }
+  }
+
+  .card_section {
+    width: 100%;
+    margin-top: 2.5rem;
+    @include flex(row, center, space-evenly, 10px);
+
+    @include break(500px) {
+      @include flex(column, center, space-evenly, 10px);
+      width: 80%;
+    }
+  }
+}
+
+// Section 15
+.section15_container {
+  @include flex(column, center, null, 0px);
+  padding: 3.5rem 0;
+  text-align: center;
+  background-color: var(--lightbeigebg);
+  .heading15 {
+    .main_title {
+      .title {
+        font-size: 1.15rem;
+        font-weight: 600;
+        color: var(--title);
+        margin-bottom: 5px;
+      }
+
+      .subtitle_large {
+        font-size: 1.8rem;
+        font-weight: 700;
+        margin-bottom: 15px;
+      }
+    }
+  }
+
+  .diagram15 {
+    max-width: 1170px;
+    margin-top: 2.5rem;
+    @include flex(row, null, null, 10px);
+
+    @include break(500px) {
+      @include flex(column, null, null, 10px);
+    }
+    .single_diagram {
+      @include flex(column, center, null, 0px);
+    }
+
+    .work-process {
+      background-color: var(--lightbeigebg);
+      padding: 90px 0;
+    }
+
+    .work-thumb {
+      cursor: pointer;
+      text-align: center;
+      width: 170px !important;
+      height: 170px;
+      border-radius: 50%;
+      background-color: var(--title);
+      transition: all ease 0.8s;
+    }
+
+    .work-thumb:hover {
+      background-color: var(--color2);
+      transition: all 0.8s ease-out;
+      .work-number {
+        background-color: var(--title);
+        transition: all 0.8s ease;
+      }
+    }
+
+    .work-thumb svg {
+      color: var(--white);
+      position: relative;
+      width: 70px;
+      height: 70px;
+      vertical-align: middle;
+    }
+
+    .work-number {
+      position: relative;
+      font-size: 28px;
+      background-color: var(--color2);
+      color: var(--white);
+      border-radius: 50%;
+      width: 58px;
+      height: 58px;
+      justify-content: end;
+      margin-left: 100px;
+      border: 7px var(--white) solid;
+    }
+
+    .work-title {
+      font-size: 26px;
+      font-weight: 600;
+      padding-top: 20px;
+    }
+
+    .work-desc {
+      padding: 0.4rem 0.6rem;
+      flex-wrap: wrap;
+    }
+  }
+}

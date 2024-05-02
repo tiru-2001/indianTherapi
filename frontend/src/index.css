@@ -1,0 +1,60 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+:root {
+  --theme-color: #95a37f;
+  --color1: #646e57;
+  --main-heading-color: rgb(48, 48, 48);
+  --button-bg: #646e57;
+  --icon-bg: #333d29;
+  --gray: rgb(72, 74, 78);
+  --doctorpage-theme: #414833;
+  --doctorpage-btn: rgb(38, 198, 142);
+  --flower-bg: rosybrown;
+  --color2: rgb(66, 54, 28);
+  --color3: rgb(163, 91, 91);
+  --card_hover: rgb(96, 134, 114);
+  --color4: rgb(246, 208, 190);
+  --lightgreenbg: rgb(222, 240, 211);
+  --blue-heading: rgb(28, 28, 81);
+  --lightbeigebg: rgb(241, 246, 224);
+  --redbrown: brown;
+  --title: #d39259;
+  --white: white;
+  --yellow: yellow;
+  --black: black;
+  --olive-heading: #424236;
+  --link-hover-orange: #b17744;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+.font {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+ul li {
+  list-style-type: none;
+  font-weight: 500;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.main_heading {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--main-heading-color);
+  text-align: center;
+}
+
+.sub_heading {
+  font-size: 2.6rem;
+  font-weight: 600;
+}

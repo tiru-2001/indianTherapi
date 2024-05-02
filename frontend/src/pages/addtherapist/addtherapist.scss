@@ -1,0 +1,31 @@
+@import "../../globalscss/global.scss";
+@import "../../globalscss/responsivemixins.scss";
+
+.add-therapist-container {
+  min-height: 100vh;
+  @include flex(row, center, center, 0px);
+  form {
+    border-radius: 5px;
+    background-color: rgb(168, 167, 167);
+    padding: 20px;
+    width: 30%;
+    @include flex(column, null, null, 20px);
+    input {
+      @include input() {
+      }
+    }
+    .language_section {
+      @include flex(column, start, null, 10px);
+      section {
+        @include flex(row, center, center, 10px);
+        label {
+          @include flex(row, null, null, 5px);
+        }
+      }
+    }
+    button {
+      @include button(var(--doctorpage-btn), black);
+      margin: 0 auto;
+    }
+  }
+}

@@ -1,0 +1,32 @@
+@import "../../globalscss//global.scss";
+@import "../../globalscss//responsivemixins.scss";
+.category_maincontainer {
+  padding-top: 100px;
+  @include flex(column, center, null, 20px);
+  .booking-container {
+    @include flex(row, center, center, 30px);
+    @include break(800px) {
+      @include flex(column, start, null, 30px);
+    }
+    padding: 20px;
+    background-color: rgb(249, 251, 252);
+    select {
+      padding: 8px;
+      border-radius: 4px;
+      @include break(280px) {
+        width: 100%;
+      }
+    }
+    .option select:focus {
+      outline: none;
+    }
+
+    .bold-option {
+      font-weight: bold;
+    }
+
+    button {
+      @include button(var(--doctorpage-theme), black);
+    }
+  }
+}

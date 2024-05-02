@@ -1,0 +1,10 @@
+@import "../../../globalscss/global.scss";
+@import "../../../globalscss/responsivemixins.scss";
+
+.btn_container {
+  height: 100%;
+  @include flex(row, center, center, 10px);
+  .addbtn {
+    @include button(var(--doctorpage-btn), black);
+  }
+}

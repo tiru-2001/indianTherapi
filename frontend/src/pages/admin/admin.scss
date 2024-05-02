@@ -1,0 +1,17 @@
+@import "../../globalscss/global.scss";
+@import "../../globalscss/responsivemixins.scss";
+
+.admin_container {
+  margin-top: 100px;
+  min-height: 100vh;
+  @include flex(column, null, null, 10px);
+  h1 {
+    text-align: center;
+    span {
+      color: var(--doctorpage-btn);
+    }
+  }
+  .outlet_container {
+    flex: 1;
+  }
+}

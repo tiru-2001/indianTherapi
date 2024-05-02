@@ -1,0 +1,37 @@
+@import "../../globalscss/global.scss";
+@import "../../globalscss/responsivemixins.scss";
+.termcontainer{
+    background-color: var(--lightbeigebg);
+    padding-left:50px;
+    padding-right: 50px;
+    padding-top: 100px;
+    padding-bottom: 30px;
+    h2{
+        color: var(--olive-heading);
+        font-weight: 500;
+          font-size: 40px; 
+          text-align: center;
+          padding: 10px;
+          padding-bottom: 20px;
+    }
+    h1{
+        color: var(--olive-heading);
+        font-weight: 500;
+          font-size: 23px;
+    }
+ 
+
+.subcontainer{
+    h1{
+        color: var(--olive-heading);
+        font-weight: 500;
+          font-size: 23px;
+    }
+    p{
+        line-height: 1.5;
+    }
+.contentbox{
+    padding: 15px 0;
+}
+}
+}

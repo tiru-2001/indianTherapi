@@ -1,0 +1,11 @@
+@import "../../globalscss//global.scss";
+@import "../../globalscss/responsivemixins.scss";
+.doctors_container {
+  // padding-top: 100px;
+  @include flex(column, null, null, 20px);
+
+  .bottom {
+    @include flex(row, null, space-around, 0px);
+    flex-wrap: wrap;
+  }
+}

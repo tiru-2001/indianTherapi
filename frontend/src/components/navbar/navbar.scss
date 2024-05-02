@@ -1,0 +1,192 @@
+/* first nav section  */
+@import "../../globalscss/global.scss";
+@import "../../globalscss/responsivemixins.scss";
+header {
+  position: relative;
+  .first-nav {
+    height: 100px;
+    font-size: 1.1rem;
+    background-color: var(--theme-color);
+    color: white;
+    @include flex(row, center, space-around, 0px);
+    @include break(700px) {
+      @include flex(column, center, null, 15px);
+      height: max-content;
+      padding: 10px;
+    }
+    @include break(350px) {
+      gap: 15px;
+    }
+    .left {
+      flex: 1;
+      @include flex(row, center, center, 50px);
+      @include break(500px) {
+        @include flex(column, center, center, 10px);
+        font-size: 0.9rem;
+      }
+
+      .left-item1 {
+        @include flex(row, center, null, 5px);
+      }
+
+      .left-item2 {
+        @include flex(row, center, null, 4px);
+      }
+    }
+
+    .right {
+      flex: 1;
+      @include flex(row, center, center, 50px);
+      height: 100%;
+      justify-content: end;
+      @include break(350px) {
+        gap: 20px;
+      }
+      @include break(290px) {
+        @include flex(column, center, center, 10px);
+      }
+      .right-item1 {
+        @include flex(row, center, null, 20px);
+      }
+
+      .right-item2 {
+        padding: 10px;
+        text-transform: uppercase;
+        height: 100%;
+        width: 50%;
+        background-color: var(--color1);
+        font-weight: bold;
+        @include flex(row, center, center, 0px);
+        @include break(700px) {
+          border-radius: 10px;
+        }
+        @include break(350px) {
+          font-size: 1rem;
+        }
+        @include break(290px) {
+          font-size: 0.9rem;
+          padding: 5px;
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  /* second nav section  */
+
+  .second-nav-container {
+    right: 0;
+    left: 0;
+    top: 80px;
+    position: absolute;
+    z-index: 99;
+    @include break(700px) {
+      @include flex(column, center, null, 30px);
+      top: 145px;
+    }
+    @include break(350px) {
+      top: 129px;
+    }
+
+    @include break(270px) {
+      top: 149px;
+    }
+
+    .second-nav {
+      background-color: white;
+      height: 100px;
+      width: 80%;
+      border-radius: 10px;
+      margin: 0 auto;
+      padding: 5px 30px;
+      @include flex(row, center, space-between, 0px);
+      @include break(500px) {
+        height: 60px;
+        @include flex(row, center, null, 0px);
+        padding: 5px;
+      }
+      .logo {
+        img {
+          width: 150px;
+          height: 90px;
+          @include break(500px) {
+            height: 50px;
+            width: 70px;
+          }
+        }
+      }
+
+      .nav-items {
+        flex: 1;
+        @include flex(row, center, end, 30px);
+        font-size: 1.2rem;
+        font-weight: 400;
+        @include break(1000px) {
+          display: none;
+        }
+        @media screen and (min-width: 1000px) and (max-width: 1200px) {
+          font-size: 1rem;
+          gap: 20px;
+        }
+      }
+      .mobile_version_nav {
+        display: none;
+        @include break(1000px) {
+          @include flex(column, null, null, 0px);
+        }
+        .menubtn_container {
+          .menu_icon {
+            height: 30px;
+            width: 30px;
+          }
+        }
+        .toggleContainer {
+          display: none;
+          width: 60%;
+          background-color: rgb(73, 104, 55);
+          right: 100px;
+          position: absolute;
+          top: 110px;
+          padding: 20px;
+          border-radius: 20px;
+          @include break(1000px) {
+            @include flex(column, flex-start, null, 50px);
+          }
+          @include break(700px) {
+            top: 110px;
+            right: 50px;
+            gap: 20px;
+          }
+          .cancelbutton_container {
+            padding: 10px;
+            .cancelButton {
+              color: white;
+              height: 30px;
+              width: 30px;
+              cursor: pointer;
+            }
+          }
+
+          .mobile_navitems_container {
+            flex: 1;
+            width: 100%;
+            .links {
+              font-weight: 400;
+              font-size: 1rem;
+
+              padding: 8px 5px;
+              border-radius: 10px;
+              &:hover {
+                background-color: white;
+              }
+            }
+            @include flex(column, center, null, 15px);
+            @include break(700px) {
+              gap: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

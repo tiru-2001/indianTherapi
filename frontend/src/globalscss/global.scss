@@ -1,0 +1,25 @@
+@mixin flex($direction, $align, $justify, $gap) {
+  display: flex;
+  flex-direction: $direction;
+  gap: $gap;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin button($bg, $color) {
+  width: max-content;
+  padding: 10px 15px;
+  border-radius: 5px;
+  background-color: $bg;
+  @include flex(row, center, center, 0px);
+  font-weight: 400;
+  @content;
+}
+
+@mixin input() {
+  padding: 10px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  @content;
+}

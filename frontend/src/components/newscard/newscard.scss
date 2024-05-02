@@ -1,0 +1,77 @@
+@import "../../globalscss/global.scss";
+@import "../../globalscss/responsivemixins.scss";
+
+.outer_card {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 40px rgb(0 0 0 / 10%);
+
+  .img {
+    background-color: var(--black);
+    overflow: hidden;
+    height: 90%;
+
+    img {
+      width: 100%;
+      transition: all 0.4s ease;
+    }
+  }
+
+  .img:hover {
+    img {
+      opacity: 0.6;
+      transform: scale(1.1);
+      transition: all 0.4s ease;
+      overflow-clip-margin: content-box;
+      overflow: clip;
+    }
+  }
+
+  .card-date {
+    width: 3.5rem;
+    background-color: var(--theme-color);
+    color: var(--white);
+    border-radius: 50%;
+    padding: 8px;
+    position: relative;
+    top: -50px;
+    margin: 10px;
+
+    .month,
+    .number {
+      font-weight: 500;
+    }
+  }
+
+  .author {
+    position: relative;
+    top: -40px;
+    text-align: left;
+
+    a {
+      color: var(--title);
+      font-weight: 500;
+    }
+
+    a::before {
+      content: " ";
+    }
+
+    a:hover {
+      color: var(--black);
+    }
+  }
+  .card_title {
+    position: relative;
+    top: -20px;
+    text-align: justify;
+    font-size: 1.3rem;
+    font-weight: 500;
+    @include break(800px) {
+      font-size: 1.1rem;
+      font-weight: 400;
+    }
+  }
+}

@@ -1,0 +1,47 @@
+@import "../../globalscss/responsivemixins.scss";
+@import "../../globalscss/global.scss";
+
+.card_container {
+  background-color: var(--white);
+  box-shadow: 0px 0px 21px 3px rgb(177, 174, 174);
+  border-radius: 15px;
+  @include flex(column, null, null, 15px);
+  padding: 10px 15px;
+  height: 440px;
+  margin: 20px;
+  overflow: hidden;
+
+  &:hover {
+    box-shadow: 0px 0px 21px 3px var(--card_hover);
+  }
+  .img_section {
+    @include flex(row, center, center, 0px);
+    align-self: center;
+    border-radius: 50%;
+    background-color: var(--theme-color);
+    padding: 10px;
+
+    img {
+      object-fit: cover;
+      border-radius: 50%;
+      @include break(300px) {
+        width: 150px !important;
+        height: 150px !important;
+      }
+    }
+  }
+  h3 {
+    color: rgb(29, 28, 28);
+    text-align: left !important;
+    @include break(300px) {
+      text-align: left;
+    }
+  }
+  p {
+    font-size: 1.1rem;
+    font-weight: 400;
+    @include break(300px) {
+      text-align: left;
+    }
+  }
+}
