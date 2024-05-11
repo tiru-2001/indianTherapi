@@ -93,12 +93,12 @@ const right_content1 = {
     {
       icon: "",
       title: "Depression and Loneliness",
-      desc: "Overcome DEpression and Loneliness to lead a happy life",
+      desc: "Overcome Depression and Loneliness to lead a happy life",
     },
     {
       icon: "",
       title: "Qualified Therapis",
-      desc: "30 years of experience",
+      desc: "10+ Years of experience",
     },
   ],
   btn_text: "Learn more",

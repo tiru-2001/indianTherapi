@@ -19,6 +19,8 @@ import {
   Admin,
   Addtherapist,
   Termsandcond,
+  CancelPayment,
+  SuccessPayment,
 } from "./pages";
 import { Addbtn } from "./components";
 
@@ -30,14 +32,17 @@ const App = () => {
           <Route path="/" element={<Parent />}>
             <Route index element={<Home />} />
             <Route path="private/*" element={<Private />}>
-              <Route path="booking" element={<Appointment />} />
+              <Route path="book-appointment/:id" element={<Appointment />} />
               <Route path="admin/*" element={<Admin />}>
                 <Route index element={<Addbtn />} />
                 <Route path="add-therapist" element={<Addtherapist />} />
               </Route>
             </Route>
             <Route path="login" element={<Login />} />
-            <Route path="top-therapists" element={<Therapist />} />
+            <Route
+              path="top-indian-therapists-best-online-therapy"
+              element={<Therapist />}
+            />
             <Route path="dietician" element={<Dietician />} />
             <Route path="counseling" element={<Counseling />} />
             <Route path="contact-us" element={<Contact />} />
@@ -45,6 +50,8 @@ const App = () => {
             <Route path="register" element={<Register />} />
             <Route path="eap" element={<Eap />} />
             <Route path="termsandcond" element={<Termsandcond />} />
+            <Route path="cancelpayment" element={<CancelPayment />} />
+            <Route path="successpayment" element={<SuccessPayment />} />
           </Route>
         </Routes>
       </Router>

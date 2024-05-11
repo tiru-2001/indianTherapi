@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import "./doctor.scss";
 import { FaLocationDot } from "react-icons/fa6";
 const DoctorCard = ({ item }) => {
-  console.log(item);
   return (
     <section className="doctor_card">
       <section className="card_image">
@@ -11,7 +10,7 @@ const DoctorCard = ({ item }) => {
       <section className="card_content">
         <section className="card_heading">
           <h5>{item?.name}</h5>
-          <p>{item?.description}</p>
+          <p>{`${item?.description.slice(0, 30)}...`}</p>
         </section>
         <section className="card_middle">
           {/* {stars} */}
@@ -21,16 +20,11 @@ const DoctorCard = ({ item }) => {
           </section>
         </section>
         <section className="card_bottom">
-          <p>
-            Language:{" "}
-            {item.languages?.map((lang, ind) => {
-              return <span key={ind}>{lang}</span>;
-            })}
-          </p>
-          <p>{item.experience} Experience</p>
-          <strong>{item?.price} Rs</strong>
+          <p>{`Languages: ${item?.languages.join(",")}`}</p>
+          <p> Experience:{item?.experience} </p>
+          <strong>{item?.price} $ per session</strong>
         </section>
-        <Link className="link" to="/private/booking">
+        <Link className="link" to={`/private/book-appointment/${item._id}`}>
           Book Now
         </Link>
       </section>

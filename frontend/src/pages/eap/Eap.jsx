@@ -2,8 +2,27 @@ import "./eap.scss";
 import { section1_utils, eap_features } from "../../utils/eaputils";
 import Section1 from "../../components/eapcomponents/Section1";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
 export default function Eap() {
+  useEffect(() => {
+    document.title = "Employee Assistance Program";
+    const descriptionMeta = document.createElement("meta");
+    descriptionMeta.name = "description";
+    descriptionMeta.content =
+      "Learn about IndiaTherapist's Employee Assistance Program (EAP) offering mental health support for employees.";
+    const keywordsMeta = document.createElement("meta");
+    keywordsMeta.name = "keywords";
+    keywordsMeta.content =
+      "IndiaTherapist, Employee Assistance Program, EAP, mental health support, workplace wellness, employee counseling";
+    document.head.appendChild(descriptionMeta);
+    document.head.appendChild(keywordsMeta);
+    return () => {
+      document.head.removeChild(descriptionMeta);
+      document.head.removeChild(keywordsMeta);
+    };
+  }, []);
+
   return (
     <section className="eap_container">
       {/* section1 */}
@@ -32,10 +51,10 @@ export default function Eap() {
             </p>
           </section>
           <section className="contact-button">
-            <Link to ="/contact-us"> 
-            <button >Contact us </button> 
+            <Link to="/contact-us">
+              <button>Contact us </button>
             </Link>
-           </section>
+          </section>
         </section>
         <section className="right">
           <section className="right_top_content_left">
@@ -77,9 +96,9 @@ export default function Eap() {
             </section>
           </section>
           <section className="callback-button">
-          <Link to="/contact-us">
-        <button >Request Call Back</button>
-      </Link>
+            <Link to="/contact-us">
+              <button>Request Call Back</button>
+            </Link>
           </section>
         </section>
         {/* section3 right side */}

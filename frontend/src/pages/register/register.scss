@@ -4,85 +4,26 @@
 .app__register-container {
   padding: 50px 0px;
   min-height: 100vh;
-  background: url("https://img.freepik.com/free-vector/monochromatic-hand-painted-background-with-drawn-nature-elements_52683-63006.jpg?w=996&t=st=1714140211~exp=1714140811~hmac=b1a92f4a58e970df6a082bb3abfde89fa291a7e74e9ed1dfadbfd69bde48833c")
-    center/cover no-repeat;
   @include flex(row, center, center, 0px);
   .app__register-subcontainer {
     box-shadow: 0px 0px 20px rgba(120, 120, 120, 0.5);
     height: 80%;
+    max-width: 1200px;
     width: 60%;
-    display: flex;
 
-    @include break(1200px) {
-      width: 80%;
-    }
     @include break(850px) {
       width: 90%;
     }
     @include break(600px) {
-      @include flex(column-reverse, null, null, 0px);
       height: 100%;
     }
     @include break(600px) {
       margin-top: 100px;
     }
-    .right {
-      flex: 1;
-      @include flex(column, center, center, 10px);
-      padding: 10px 30px;
-      @include break(1200px) {
-        width: 50%;
-        text-align: left;
-      }
-      @include break(600px) {
-        width: 100%;
-      }
-      .title-container {
-        h1 {
-          // color: var(--flower-bg);
-          text-align: start;
-          font-weight: 600;
-          @include break(1200px) {
-            text-align: left;
-          }
-          @include break(320px) {
-            font-size: 2.3rem;
-            width: 100%;
-          }
-          @include break(250px) {
-            word-break: break-all;
-          }
-        }
-        p {
-          margin: 20px 0px;
-          padding: 10px 0px;
-          color: rgb(84, 83, 83);
-          font-size: 1.2rem;
-
-          font-weight: 500;
-          @include break(700px) {
-            font-size: 1.6rem;
-          }
-          @include break(320px) {
-            font-size: 1.3rem;
-          }
-          @include break(250px) {
-            word-break: break-all;
-          }
-        }
-      }
-    }
     .left {
-      flex: 1;
+      width: 100%;
       @include flex(row, center, space-around, 0px);
-      @include break(1200px) {
-        width: 50%;
-        text-align: left;
-      }
-      @include break(600px) {
-        width: 100%;
-        text-align: left;
-      }
+
       .app__left-subcontainer {
         padding: 50px 20px;
         @include flex(column, null, null, 18px);
@@ -106,7 +47,7 @@
         }
         .app__form {
           .form-container {
-            @include flex(column, null, null, 10px);
+            @include flex(column, null, null, 20px);
 
             input {
               padding: 10px 5px;
@@ -125,8 +66,10 @@
           }
         }
         .btn_container {
-          @include flex(row, center, center, 5px);
-
+          @include flex(row, center, center, 15px);
+          @include break(230px) {
+            @include flex(column, center, center, 15px);
+          }
           .btn {
             @include button(var(--doctorpage-btn), black);
             @include break(850px) {
@@ -143,3 +86,50 @@
     }
   }
 }
+
+//  // // .right {
+//   flex: 1;
+//   @include flex(column, center, center, 10px);
+//   padding: 10px 30px;
+//   @include break(1200px) {
+//     width: 50%;
+//     text-align: left;
+//   }
+//   @include break(600px) {
+//     width: 100%;
+//   }
+//   .title-container {
+//     h1 {
+//       // color: var(--flower-bg);
+//       text-align: start;
+//       font-weight: 600;
+//       @include break(1200px) {
+//         text-align: left;
+//       }
+//       @include break(320px) {
+//         font-size: 2.3rem;
+//         width: 100%;
+//       }
+//       @include break(250px) {
+//         word-break: break-all;
+//       }
+//     }
+//     p {
+//       margin: 20px 0px;
+//       padding: 10px 0px;
+//       color: rgb(84, 83, 83);
+//       font-size: 1.2rem;
+
+//       font-weight: 500;
+//       @include break(700px) {
+//         font-size: 1.6rem;
+//       }
+//       @include break(320px) {
+//         font-size: 1.3rem;
+//       }
+//       @include break(250px) {
+//         word-break: break-all;
+//       }
+//     }
+//   }
+//   // }

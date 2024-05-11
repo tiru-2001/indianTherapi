@@ -30,9 +30,11 @@ const loginController = async (req, res) => {
       process.env.JWT_KEY
     );
     console.log(token);
+    const expiryDate = new Date();
+    expiryDate.setFullYear(expiryDate.getFullYear() + 1);
     return res
 
-      .cookie("accessToken", token, { httpOnly: true })
+      .cookie("accessToken", token, { httpOnly: true, expires: expiryDate })
       .status(200)
       .send({
         message: "user successfully loggedIn",
@@ -51,7 +53,6 @@ const registerController = async (req, res) => {
   console.log("hi Iam reigste");
   try {
     const { username, phone, email, password } = req.body;
-    console.log(username);
     if (!username || !phone || !email || !password) {
       return res.status(401).send({
         message: "please fill the form completely",
@@ -68,11 +69,13 @@ const registerController = async (req, res) => {
       });
     }
     const hashedpassword = await hashPassword(password);
+
     const newUser = await new usermodel({
       username,
       email,
       password: hashedpassword,
       phone,
+      ip: req.ip,
     }).save();
 
     const responseUser = {

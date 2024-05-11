@@ -16,6 +16,9 @@ const userschema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    ip: {
+      type: String,
+    },
     phone: {
       type: Number,
       required: true,

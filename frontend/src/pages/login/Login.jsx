@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./login.scss";
 import { toast } from "react-toastify";
@@ -20,9 +20,8 @@ const Login = () => {
         password,
         email,
       });
-      console.log(data);
       if (data.success) {
-        toast.success("user successfully logged in you can book therapist");
+        toast.success("logged in successfully");
         localStorage.setItem(
           "user",
           JSON.stringify({ user: data.username, isAdmin: data.isAdmin })
@@ -42,13 +41,27 @@ const Login = () => {
       toast.error(e.response.data.message);
     }
   };
-  console.log(localStorage.getItem("user"));
-  console.log(JSON.parse(localStorage.getItem("user")));
+  useEffect(() => {
+    document.title = "Login Page";
+    const descriptionMeta = document.createElement("meta");
+    descriptionMeta.name = "description";
+    descriptionMeta.content =
+      "Login to IndiaTherapist to access your account and start your therapy journey.";
+    const keywordsMeta = document.createElement("meta");
+    keywordsMeta.name = "keywords";
+    keywordsMeta.content = "IndiaTherapist, login, account, therapy";
+    document.head.appendChild(descriptionMeta);
+    document.head.appendChild(keywordsMeta);
+    return () => {
+      document.head.removeChild(descriptionMeta);
+      document.head.removeChild(keywordsMeta);
+    };
+  }, []);
   return (
     <section>
       <section className="app__login-container">
         <section className="app__login-subcontainer">
-          <section className="left">
+          {/* <section className="left">
             <section className="title-container">
               <h2 className="sub_heading">
                 Unlock Your World: Sign in to Access Your Profile
@@ -59,11 +72,11 @@ const Login = () => {
                 profile awaits!
               </p>
             </section>
-          </section>
+          </section> */}
           <section className="right">
             <section className="app__right-subContainer">
               <section className="app__sign-title">
-                <h1>Sign In</h1>
+                <h1>Log In</h1>
                 <p>
                   Please enter your login information or click here to
                   registration
@@ -76,7 +89,6 @@ const Login = () => {
                     type="email"
                     value={email}
                     onChange={(e) => {
-                      console.log(e.target.value);
                       setEmail(e.target.value);
                     }}
                     placeholder="Enter your email"
@@ -95,19 +107,13 @@ const Login = () => {
 
               <section className="btn-container">
                 <button onClick={handleLogin} className="btn">
-                  Sign In
+                  Log In
                 </button>
+                <Link to="/register">
+                  <button className="btn">Register</button>
+                </Link>
               </section>
-              <Link
-                to="/register"
-                style={{
-                  color: "dodgerblue",
-                  textDecoration: "underline",
-                  fontWeight: "400",
-                }}
-              >
-                If not registered, click below to sign up
-              </Link>
+
               {error && <section style={{ color: "red" }}>{error}</section>}
             </section>
           </section>

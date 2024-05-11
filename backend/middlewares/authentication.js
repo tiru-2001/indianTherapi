@@ -3,7 +3,6 @@ import jwt from "jsonwebtoken";
 const verifyToken = (req, res, next) => {
   try {
     const token = req.cookies.accessToken;
-    console.log(token);
     if (!token) {
       return res.status(401).send({
         message: "There is no access token please logout and login",
@@ -17,16 +16,10 @@ const verifyToken = (req, res, next) => {
           success: false,
         });
       }
-      console.log(data);
-      if (data.isAdmin) {
-        req.user_id = data.user_id;
-        next();
-      } else {
-        return res.status(200).send({
-          message: "User cannot acces ",
-          success: false,
-        });
-      }
+
+      req.user_id = data.user_id;
+      req.isadminOrnot = data.isAdmin;
+      next();
     });
   } catch (e) {
     console.log(e);

@@ -24,8 +24,8 @@ const Addtherapist = () => {
     formData.append("price", price);
     formData.append("number", number);
     formData.append("experience", experience);
-    formData.append("description", name);
-    formData.append("languages", languages);
+    formData.append("description", description);
+    formData.append("languages", JSON.stringify(languages));
     formData.append("image", uploadImage);
 
     try {
@@ -56,14 +56,12 @@ const Addtherapist = () => {
         toast.error("Something went wrong");
       }
     } catch (e) {
-      console.log(e);
       toast.error("Something went wrong");
     }
   };
 
   const checkedFun = (e) => {
     const value = e.target.value;
-    console.log(value);
     if (e.target.checked) {
       setLanguages([...languages, value]);
     } else {
@@ -71,7 +69,6 @@ const Addtherapist = () => {
       setLanguages(filtered);
     }
   };
-
   return (
     <section className="add-therapist-container">
       <form ref={formRef} onSubmit={handleSubmit}>
@@ -85,16 +82,7 @@ const Addtherapist = () => {
           name="name"
           placeholder="Enter name"
         />
-        <input
-          required
-          onChange={(e) => {
-            setDescription(e.target.value);
-          }}
-          value={description}
-          type="text"
-          name="description"
-          placeholder="Enter the description"
-        />
+
         <input
           required
           onChange={(e) => {
@@ -135,6 +123,18 @@ const Addtherapist = () => {
           name="price"
           placeholder="Enter the price"
         />
+
+        <textarea
+          rows={5}
+          required
+          onChange={(e) => {
+            setDescription(e.target.value);
+          }}
+          value={description}
+          type="text"
+          name="description"
+          placeholder="Enter the description"
+        />
         <input
           required
           type="file"
@@ -154,30 +154,65 @@ const Addtherapist = () => {
           <h4>language:</h4>
           <section>
             <label>
-              Hindi:
-              <input
-                name="language"
-                onChange={checkedFun}
-                value="hindi"
-                type="checkbox"
-              />
-            </label>
-            <label>
-              English
-              <input
-                name="language"
-                onChange={checkedFun}
-                value="english"
-                type="checkbox"
-              />
-            </label>
-            <label>
               Kannada:
               <input
                 name="language"
                 onChange={checkedFun}
                 value="kannada"
                 type="checkbox"
+                checked={languages.includes("kannada")}
+              />
+            </label>
+            <label>
+              Telugu:
+              <input
+                name="language"
+                onChange={checkedFun}
+                value="telugu"
+                type="checkbox"
+                checked={languages.includes("telugu")}
+              />
+            </label>
+
+            <label>
+              Tamil:
+              <input
+                name="language"
+                onChange={checkedFun}
+                value="tamil"
+                type="checkbox"
+                checked={languages.includes("tamil")}
+              />
+            </label>
+            <label>
+              Hindi:
+              <input
+                name="language"
+                onChange={checkedFun}
+                value="hindi"
+                type="checkbox"
+                checked={languages.includes("hindi")}
+              />
+            </label>
+
+            <label>
+              English:
+              <input
+                name="language"
+                onChange={checkedFun}
+                value="english"
+                type="checkbox"
+                checked={languages.includes("english")}
+              />
+            </label>
+            <label>
+              Gujarati
+              <input
+                name="language"
+                onChange={checkedFun}
+                value="gujarati"
+                type="checkbox"
+                checked={languages.includes("gujarati")}
               />
             </label>
           </section>

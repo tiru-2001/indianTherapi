@@ -13,13 +13,15 @@ import Blogs from "./blogs/Blogs";
 import Admin from "./admin/Admin";
 import Addtherapist from "./addtherapist/Addtherapist";
 import Termsandcond from "./termsandcond/Termsandcond";
-
+import SuccessPayment from "./successpayment/SuccessPayment";
+import CancelPayment from "./cancelpayment/CancelPayment";
 export {
   Home,
   Parent,
   Contact,
   Dietician,
   Counseling,
+  CancelPayment,
   Login,
   Register,
   Private,
@@ -29,5 +31,6 @@ export {
   Eap,
   Admin,
   Addtherapist,
+  SuccessPayment,
   Termsandcond,
 };

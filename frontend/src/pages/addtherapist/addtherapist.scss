@@ -8,8 +8,12 @@
     border-radius: 5px;
     background-color: rgb(168, 167, 167);
     padding: 20px;
-    width: 30%;
+    width: 50%;
     @include flex(column, null, null, 20px);
+    @include break(500px) {
+      width: 100%;
+      margin: 10px 20px;
+    }
     input {
       @include input() {
       }
@@ -17,7 +21,8 @@
     .language_section {
       @include flex(column, start, null, 10px);
       section {
-        @include flex(row, center, center, 10px);
+        @include flex(row, center, space-around, 10px);
+        flex-wrap: wrap;
         label {
           @include flex(row, null, null, 5px);
         }

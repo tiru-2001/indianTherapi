@@ -78,18 +78,16 @@ function Footer() {
           <section className="col">
             <section className="header">Book Appointment</section>
 
-            <Link to="tel:1236547890">
-              <section className="container-fluid">
-                <section className="col dialnow">
-                  <p>Let's Chat</p>
-                  <section className="dialnow-number">
-                    <a href="https://api.whatsapp.com/send?phone=919384838353">
-                      +919384838353
-                    </a>
-                  </section>
+            <section className="container-fluid">
+              <section className="col dialnow">
+                <p>Let's Chat</p>
+                <section className="dialnow-number">
+                  <a href="https://api.whatsapp.com/send?phone=919384838353">
+                    +919384838353
+                  </a>
                 </section>
               </section>
-            </Link>
+            </section>
           </section>
         </section>
         <section className="copyright">

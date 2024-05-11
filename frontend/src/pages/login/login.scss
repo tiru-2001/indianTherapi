@@ -3,8 +3,6 @@
 
 .app__login-container {
   min-height: 100vh;
-  background: url("https://img.freepik.com/free-vector/watercolor-abstract-floral-background_23-2150773246.jpg?w=900&t=st=1714047327~exp=1714047927~hmac=8d25336ac6cb2260a9d982594ebe32b47706d50ae5f35ada8946dd1b9fc08ff6")
-    center center / cover no-repeat;
   @include flex(row, center, center, 0px);
   .app__login-subcontainer {
     max-width: 1200px;
@@ -12,10 +10,8 @@
     box-shadow: 0px 0px 20px rgba(120, 120, 120, 0.5);
     height: 500px;
     width: 60%;
-    display: flex;
-    @include break(1000px) {
-      width: 80%;
-    }
+    @include flex(row, center, center, 0px);
+
     @include break(740px) {
       width: 90%;
     }
@@ -23,39 +19,12 @@
       margin-top: 100px;
     }
     @include break(600px) {
-      @include flex(column, null, null, 0px);
-      height: max-content;
+      height: 80vh;
       padding: 10px;
     }
-    .left {
-      flex: 1;
-      background: url("../../assets/images/signBg.jpg") center/cover no-repeat;
-      padding: 10px 30px;
-      @include flex(row, center, null, 0px);
-      @include break(600px) {
-        flex: 1;
-      }
-      .title-container {
-        h2 {
-          color: var(--color2);
-          text-align: start;
-          @include break(350px) {
-            font-size: 2rem;
-          }
-        }
-        p {
-          padding: 10px 0px;
-          color: var(--color3);
-          font-size: 1.2rem;
-          font-weight: 400;
-          @include break(350px) {
-            font-size: 1.3rem;
-            text-align: start;
-          }
-        }
-      }
-    }
+
     .right {
+      // border: 1px solid green;
       flex: 1;
       @include flex(row, center, space-around, 0px);
       .app__right-subContainer {
@@ -97,7 +66,7 @@
           }
         }
         .btn-container {
-          @include flex(row, center, center, 0px);
+          @include flex(row, center, center, 15px);
           .btn {
             @include button(var(--doctorpage-theme), black);
           }
@@ -106,3 +75,33 @@
     }
   }
 }
+
+// .left {
+//   border: 2px solid slateblue;
+//   flex: 1;
+//   background: url("../../assets/images/signBg.jpg") center/cover no-repeat;
+//   padding: 10px 30px;
+//   @include flex(row, center, null, 0px);
+//   @include break(600px) {
+//     flex: 1;
+//   }
+//   .title-container {
+//     h2 {
+//       color: var(--color2);
+//       text-align: start;
+//       @include break(350px) {
+//         font-size: 2rem;
+//       }
+//     }
+//     p {
+//       padding: 10px 0px;
+//       color: var(--color3);
+//       font-size: 1.2rem;
+//       font-weight: 400;
+//       @include break(350px) {
+//         font-size: 1.3rem;
+//         text-align: start;
+//       }
+//     }
+//   }
+// }

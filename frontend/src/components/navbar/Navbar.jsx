@@ -17,6 +17,8 @@ const Navbar = () => {
   const { user, setUser } = useContext(usestate);
   const [toggle, setToggle] = useState(false);
   const logout = () => {
+    setToggle((prev) => !prev);
+
     localStorage.removeItem("user");
     setUser("");
   };
@@ -98,7 +100,14 @@ const Navbar = () => {
                   </h5>
                 </>
               ) : (
-                <Link to={"/login"}>Login</Link>
+                <Link
+                  onClick={() => {
+                    setToggle((prev) => !prev);
+                  }}
+                  to={"/login"}
+                >
+                  Login
+                </Link>
               )}
             </section>
             <section className="mobile_version_nav">
@@ -164,7 +173,14 @@ const Navbar = () => {
                         </h5>
                       </>
                     ) : (
-                      <Link to={"/login"}>Login</Link>
+                      <Link
+                        onClick={() => {
+                          setToggle((prev) => !prev);
+                        }}
+                        to={"/login"}
+                      >
+                        Login
+                      </Link>
                     )}
                   </section>
                 </section>

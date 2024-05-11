@@ -35,17 +35,6 @@ const Category = () => {
             </select>
           </label>
 
-          <label htmlFor="rating" className="option">
-            <select id="rating">
-              <option value="rate" className="bold-option">
-                Rating
-              </option>
-              <option value="1">1 Star</option>
-              <option value="2">2 Stars</option>
-              <option value="3">3 Stars</option>
-            </select>
-          </label>
-
           <label htmlFor="experience" className="option">
             <select id="experience">
               <option value="expe" class="bold-option">

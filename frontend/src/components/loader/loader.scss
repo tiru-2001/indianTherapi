@@ -1,0 +1,33 @@
+@import "../../globalscss/global.scss";
+@import "../../globalscss/responsivemixins.scss";
+
+@keyframes spin {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.loader_container {
+  background-color: var(--theme-color);
+  height: 100vh;
+  @include flex(row, center, center, 0px);
+  .loader_subcontainer {
+    @include flex(column, center, null, 30px);
+    div {
+      height: 100px;
+      width: 100px;
+      border-radius: 50%;
+      border-top: 5px solid var(--white);
+      animation-name: spin;
+      animation-timing-function: ease-in;
+      animation-iteration-count: infinite;
+      animation-duration: 1s;
+    }
+    h3 {
+      color: var(--white);
+      font-size: 2rem;
+    }
+  }
+}

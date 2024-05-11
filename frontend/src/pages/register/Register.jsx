@@ -1,5 +1,5 @@
 import "./register.scss";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import configuredUrl from "../../utils/request/request";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
@@ -27,7 +27,6 @@ const Register = () => {
         er += "phone must be at least 10 characters";
       }
       if (er.length) {
-        console.log("hi");
         setError(er);
         return;
       }
@@ -38,7 +37,6 @@ const Register = () => {
         email,
         phone,
       });
-      console.log(data);
       if (data.success) {
         setError("");
         toast.success(data.message);
@@ -52,17 +50,33 @@ const Register = () => {
     }
   };
 
+  useEffect(() => {
+    document.title = "Register Page";
+    const descriptionMeta = document.createElement("meta");
+    descriptionMeta.name = "description";
+    descriptionMeta.content =
+      "Sign up for IndiaTherapist and start your journey towards improved mental health.";
+    const keywordsMeta = document.createElement("meta");
+    keywordsMeta.name = "keywords";
+    keywordsMeta.content = "IndiaTherapist, register, sign up, mental health";
+    document.head.appendChild(descriptionMeta);
+    document.head.appendChild(keywordsMeta);
+    return () => {
+      document.head.removeChild(descriptionMeta);
+      document.head.removeChild(keywordsMeta);
+    };
+  }, []);
   return (
     <section className="app__register-container">
       <section className="app__register-subcontainer">
         <section className="left">
           <section className="app__left-subcontainer">
             <section className="app__signup-title">
-              <h1 className="main_heading">Sign up</h1>
+              <h1 className="main_heading">Register</h1>
               <p>Please enter your information to register</p>
             </section>
             <section className="app__form">
-              <form onSubmit={handleSubmit} className="form-container">
+              <form className="form-container">
                 <input
                   required
                   onChange={(e) => {
@@ -108,28 +122,19 @@ const Register = () => {
                 />
 
                 {error && <section style={{ color: "red" }}>{error}</section>}
-                <Link
-                  style={{ textDecoration: "underline", color: "dodgerblue" }}
-                  to={"/login"}
-                >
-                  if you already registered then click to sign in
-                </Link>
 
                 <section className="btn_container">
-                  <button type="submit" className="btn">
-                    Sign Up
+                  <button type="submit" onClick={handleSubmit} className="btn">
+                    Register
                   </button>
+                  <Link to={"/login"}>
+                    <button type="submit" className="btn">
+                      Login
+                    </button>
+                  </Link>
                 </section>
               </form>
             </section>
-          </section>
-        </section>
-        <section className="right">
-          <section className="title-container">
-            <h1 className="main_heading">
-              Elevate Your Experience: Register Today!
-            </h1>
-            <p>Start your journey with us by registering for access today.</p>
           </section>
         </section>
       </section>
