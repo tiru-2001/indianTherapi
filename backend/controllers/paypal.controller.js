@@ -47,8 +47,8 @@ const paypalController = async (req, res) => {
         payment_method: "paypal",
       },
       redirect_urls: {
-        return_url: "https://localhost:8900/api/v1/pay/success",
-        cancel_url: "https://localhost:8900/api/v1/pay/cancel",
+        return_url: "https://api.indiatherapist.com/api/v1/pay/success",
+        cancel_url: "https://api.indiatherapist.com/api/v1/pay/cancel",
       },
       transactions: [
         {
@@ -135,7 +135,7 @@ const successController = async (req, res) => {
           console.log("from execution");
           console.log(error);
           return res.redirect(
-            `https://localhost:5173/cancelpayment?cancel=${encodeURIComponent(
+            `https://indiatherapist.com/cancelpayment?cancel=${encodeURIComponent(
               "payment is cancelled"
             )}`
           );
@@ -161,7 +161,7 @@ const successController = async (req, res) => {
                 { new: true }
               );
               return res.redirect(
-                `https://localhost:5173/successpayment?success=${encodeURIComponent(
+                `https://indiatherapist.com/successpayment?success=${encodeURIComponent(
                   "payment Success"
                 )}`
               );
@@ -169,7 +169,7 @@ const successController = async (req, res) => {
               console.log(err);
               redirectSent = true;
               return res.redirect(
-                `https://localhost:5173/cancelpayment?cancel=${encodeURIComponent(
+                `https://indiatherapist.com/cancelpayment?cancel=${encodeURIComponent(
                   "Please contact our customer care if you not receive confirmation mail"
                 )}`
               );
@@ -186,7 +186,7 @@ const successController = async (req, res) => {
     );
   } catch (e) {
     return res.redirect(
-      `https://localhost:5173/cancelpayment?cancel=${encodeURIComponent(
+      `https://indiatherapist.com/cancelpayment?cancel=${encodeURIComponent(
         "Internal Server Error Contact our Customer care"
       )}`
     );
@@ -198,7 +198,7 @@ const cancelController = async (req, res) => {
   try {
     console.log("Payment Failed");
     return res.redirect(
-      `https://localhost:5173/cancelpayment?cancel=${encodeURIComponent(
+      `https://indiatherapist.com/cancelpayment?cancel=${encodeURIComponent(
         "Payment canceled"
       )}`
     );
@@ -206,7 +206,7 @@ const cancelController = async (req, res) => {
     console.log("error");
     console.log(e);
     return res.redirect(
-      `https://localhost:5173/cancelpayment?cancel=${encodeURIComponent(
+      `https://indiatherapist.com/cancelpayment?cancel=${encodeURIComponent(
         "Payment canceled"
       )}`
     );

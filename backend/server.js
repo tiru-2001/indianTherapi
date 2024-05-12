@@ -17,7 +17,7 @@ app.use(cookieParser());
 
 app.use(
   cors({
-    origin: "https://localhost:5173",
+    origin: "https://indiatherapist.com",
     credentials: true,
   })
 );
