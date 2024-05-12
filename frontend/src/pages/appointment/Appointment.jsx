@@ -122,7 +122,9 @@ const Appointment = () => {
           </h1>
           <section className="therapist_details">
             <section className="img_section">
-              <img src={`http://localhost:8900/uploads/${therapist?.image}`} />
+              <img
+                src={`http://api.indiatherapist.com/uploads/${therapist?.image}`}
+              />
             </section>
             <section className="content_section">
               <h1>{therapist?.name}</h1>

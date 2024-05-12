@@ -134,11 +134,7 @@ const successController = async (req, res) => {
         if (error) {
           console.log("from execution");
           console.log(error);
-          return res.redirect(
-            `https://indiatherapist.com/cancelpayment?cancel=${encodeURIComponent(
-              "payment is cancelled"
-            )}`
-          );
+          return res.redirect(`https://indiatherapist.com/cancelpayment`);
         } else {
           const response = payment;
           console.log(response);

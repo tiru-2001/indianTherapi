@@ -5,7 +5,7 @@ const DoctorCard = ({ item }) => {
   return (
     <section className="doctor_card">
       <section className="card_image">
-        <img src={`http://localhost:8900/uploads/${item?.image}`} />
+        <img src={`http://api.indiatherapist.com/uploads/${item?.image}`} />
       </section>
       <section className="card_content">
         <section className="card_heading">
