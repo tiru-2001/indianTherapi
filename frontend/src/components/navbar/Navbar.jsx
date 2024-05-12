@@ -59,7 +59,10 @@ const Navbar = () => {
               </a>
             </section>
 
-            <Link to="/top-therapists" className="right-item2">
+            <Link
+              to="/top-indian-therapists-best-online-therapy"
+              className="right-item2"
+            >
               Make an appointment
             </Link>
           </section>
