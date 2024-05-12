@@ -75,7 +75,7 @@ const Home = () => {
                       <Link
                         className="link"
                         title={"Read more"}
-                        to="/top-therapists"
+                        to="/top-indian-therapists-best-online-therapy"
                       >
                         <Button title={"Read more"} bg={"--icon-bg"} />
                       </Link>
