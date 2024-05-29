@@ -43,6 +43,7 @@ const Contact = () => {
       const { data } = await configuredUrl.post("/contactform/uploadcontact", {
         formData,
       });
+      console.log(data);
       if (data.success) {
         setExists(true);
         setError(false);
@@ -55,6 +56,7 @@ const Contact = () => {
         setExists(false);
       }
     } catch (e) {
+      console.log(e);
       setError(true);
     }
   };

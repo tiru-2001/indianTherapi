@@ -3,6 +3,7 @@ import contact from "../models/contact.Schema.js";
 const addContactForm = async (req, res) => {
   try {
     const { name, email, country, city, whatsapp, happylife } = req.body;
+    console.log(name);
     const nameExist = await contact.findOne({ whatsapp });
     if (nameExist) {
       return res.status(200).send({
