@@ -7,6 +7,7 @@ import therapistrouter from "./routes/addtherapists.js";
 import connectToDb from "./config/connection.js";
 import cookieParser from "cookie-parser";
 import appointmentrouter from "./routes/appointment.route.js";
+import contactRouter from "./routes/contact.js";
 import paypalrouter from "./routes/paypal.route.js";
 dotenv.config();
 connectToDb();
@@ -30,6 +31,7 @@ app.use("/api/v1/admin", adminrouter);
 app.use("/api/v1/therapist", therapistrouter);
 app.use("/uploads", express.static("./uploads"));
 app.use("/api/v1/appointment", appointmentrouter);
+app.use("/api/v1/contactform", contactRouter);
 app.use("/api/v1/pay", paypalrouter);
 
 app.listen(port, () => {
