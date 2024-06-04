@@ -19,7 +19,6 @@ const addTherapist = async (req, res) => {
     console.log(JSON.parse(languages));
 
     const { filename } = req.file;
-    console.log(filename);
     const nameExist = await therapistmodel.findOne({ name });
     console.log(nameExist);
     if (nameExist) {

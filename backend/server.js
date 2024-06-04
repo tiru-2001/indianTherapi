@@ -7,7 +7,7 @@ import therapistrouter from "./routes/addtherapists.js";
 import connectToDb from "./config/connection.js";
 import cookieParser from "cookie-parser";
 import appointmentrouter from "./routes/appointment.route.js";
-import contactRouter from "./routes/contact.js";
+import contactRouter from "./routes/contact.router.js";
 import paypalrouter from "./routes/paypal.route.js";
 dotenv.config();
 connectToDb();
