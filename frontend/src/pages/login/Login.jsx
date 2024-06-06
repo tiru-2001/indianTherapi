@@ -20,6 +20,7 @@ const Login = () => {
         password,
         email,
       });
+      console.log(data);
       if (data.success) {
         toast.success("logged in successfully");
         localStorage.setItem(

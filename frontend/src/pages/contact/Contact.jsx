@@ -170,7 +170,7 @@ const Contact = () => {
                   ></textarea>
                 </div>
                 <div className="button-submit">
-                  <button type="submit">Submit</button>
+                  <button onClick={handleSubmit}>Submit</button>
                 </div>
               </form>
             </div>
