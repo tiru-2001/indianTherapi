@@ -19,7 +19,7 @@ const initemail = async () => {
 initemail();
 
 //addcontact form controller ********************************
-const addContactForm = async (req, res) => {
+const addcontactform = async (req, res) => {
   try {
     const { name, email, country, city, whatsapp, happylife } = req.body;
 
@@ -102,4 +102,4 @@ const addContactForm = async (req, res) => {
   }
 };
 
-export { addContactForm };
+export { addcontactform };

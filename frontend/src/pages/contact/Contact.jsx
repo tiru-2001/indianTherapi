@@ -57,6 +57,7 @@ const Contact = () => {
         setResult(data);
       }
     } catch (e) {
+      toast.error(e.message);
       console.log("error from contact");
       console.log(e);
       setError(true);
@@ -85,7 +86,7 @@ const Contact = () => {
               appointment.
             </p>
             <div className="form-container">
-              <form onSubmit={handleSubmit}>
+              <form>
                 <div className="input-group">
                   <label htmlFor="name">
                     Name <span>*</span>
