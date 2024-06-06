@@ -47,6 +47,7 @@ const Contact = () => {
         country: formdata.country,
         happylife: formdata.happylife,
       });
+      console.log("data");
       console.log(data);
       if (data.success) {
         setError(false);
@@ -56,6 +57,7 @@ const Contact = () => {
         setResult(data);
       }
     } catch (e) {
+      console.log("error from contact");
       console.log(e);
       setError(true);
     }
