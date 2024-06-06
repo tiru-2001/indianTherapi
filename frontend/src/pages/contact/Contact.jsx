@@ -39,7 +39,7 @@ const Contact = () => {
     e.preventDefault();
 
     try {
-      const { data } = await configuredUrl.post("/contactform/uploadcontact", {
+      const { data } = await configuredUrl.post("/contact/addcontact", {
         name: formdata.names,
         email: formdata.email,
         city: formdata.city,
