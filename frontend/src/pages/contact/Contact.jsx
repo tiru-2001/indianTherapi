@@ -39,23 +39,23 @@ const Contact = () => {
     e.preventDefault();
 
     try {
-      // const { data } = await configuredUrl.get("/co/coo", {
-      //   name: formdata.names,
-      //   email: formdata.email,
-      //   city: formdata.city,
-      //   whatsapp: formdata.whatsapp,
-      //   country: formdata.country,
-      //   happylife: formdata.happylife,
-      // });
-      const { data } = await configuredUrl.get("/co/coo");
+      const { data } = await configuredUrl.post("/contact/addcontact", {
+        name: formdata.names,
+        email: formdata.email,
+        city: formdata.city,
+        whatsapp: formdata.whatsapp,
+        country: formdata.country,
+        happylife: formdata.happylife,
+      });
+      console.log("data");
       console.log(data);
-      // if (data.success) {
-      //   setError(false);
-      //   toast.success(
-      //     "form  submitted successfully we weill get back to you as soon possible"
-      //   );
-      //   setResult(data);
-      // }
+      if (data.success) {
+        setError(false);
+        toast.success(
+          "form  submitted successfully we weill get back to you as soon possible"
+        );
+        setResult(data);
+      }
     } catch (e) {
       toast.error(e.message);
       console.log("error from contact");

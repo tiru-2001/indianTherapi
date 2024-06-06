@@ -9,7 +9,6 @@ import cookieParser from "cookie-parser";
 import appointmentrouter from "./routes/appointment.route.js";
 import contactrouter from "./routes/contact.router.js";
 import paypalrouter from "./routes/paypal.route.js";
-import pra from "./routes/pra.route.js";
 dotenv.config();
 connectToDb();
 
@@ -34,7 +33,6 @@ app.use("/uploads", express.static("./uploads"));
 app.use("/api/v1/appointment", appointmentrouter);
 app.use("/api/v1/contact", contactrouter);
 app.use("/api/v1/pay", paypalrouter);
-app.use("/api/v1/co", pra);
 
 app.listen(port, () => {
   console.log("listening on port");
