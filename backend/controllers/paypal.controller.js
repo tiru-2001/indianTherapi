@@ -1,6 +1,6 @@
 import appointmentModel from "../models/appointMentSchema.js";
 import paypal from "paypal-rest-sdk";
-import nodemailer from "nodemailer";
+import loademailauth from "../utils/loademailauth.js";
 
 let transporter;
 const initPaypal = async () => {
@@ -11,18 +11,8 @@ const initPaypal = async () => {
     client_id: process.env.PAYPAL_CLIENT_ID,
     client_secret: process.env.PAYPAL_SECRET_KEY,
   });
-  transporter = nodemailer.createTransport({
-    service: "gmail",
-    host: "smtp.gmail.com",
-    port: 587,
-    secure: false, // Use `true` for port 465, `false` for all other ports
-    auth: {
-      user: process.env.EMAIL_USER,
-      pass: process.env.EMAIL_AUTH,
-    },
-  });
+  transporter = loademailauth();
 };
-
 initPaypal();
 
 const paypalController = async (req, res) => {
@@ -210,10 +200,3 @@ const cancelController = async (req, res) => {
 };
 
 export { paypalController, successController, cancelController };
-
-// try {
-//   await
-// } catch (e) {
-//   console.log("catch from out");
-//   throw e;
-// }

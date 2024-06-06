@@ -2,10 +2,10 @@ import "./contact.scss";
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import configuredUrl from "../../utils/request/request";
-
+import { toast } from "react-toastify";
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: "",
+  const [formdata, setformdata] = useState({
+    names: "",
     email: "",
     country: "",
     city: "",
@@ -14,46 +14,46 @@ const Contact = () => {
   });
 
   const [error, setError] = useState("");
-  const [exists, setExists] = useState(false);
   const [result, setResult] = useState(false);
   const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({
-      ...formData,
+    setformdata({
+      ...formdata,
       [name]: value,
     });
   };
 
   useEffect(() => {
     let timeoutId;
-    if (result || exists) {
+    if (result) {
       timeoutId = setTimeout(() => {
         navigate("/");
       }, 10000);
     }
     return () => clearTimeout(timeoutId);
-  }, [result, exists, navigate]);
+  }, [result, navigate]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
       const { data } = await configuredUrl.post("/contactform/uploadcontact", {
-        formData,
+        name: formdata.names,
+        email: formdata.email,
+        city: formdata.city,
+        whatsapp: formdata.whatsapp,
+        country: formdata.country,
+        happylife: formdata.happylife,
       });
       console.log(data);
       if (data.success) {
-        setExists(true);
         setError(false);
-      } else if (!data.success) {
-        setResult(true);
-        setError(false);
-        setExists(false);
-      } else {
-        setError(true);
-        setExists(false);
+        toast.success(
+          "form  submitted successfully we weill get back to you as soon possible"
+        );
+        setResult(data);
       }
     } catch (e) {
       console.log(e);
@@ -90,9 +90,8 @@ const Contact = () => {
                   </label>
                   <input
                     type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
+                    name="names"
+                    value={formdata.names}
                     onChange={handleChange}
                     placeholder="Enter your name"
                     className="custom-input"
@@ -104,9 +103,8 @@ const Contact = () => {
                   </label>
                   <input
                     type="email"
-                    id="email"
                     name="email"
-                    value={formData.email}
+                    value={formdata.email}
                     onChange={handleChange}
                     placeholder="Enter your email"
                     className="custom-input"
@@ -117,9 +115,8 @@ const Contact = () => {
                     Country <span>*</span>
                   </label>
                   <select
-                    id="country"
                     name="country"
-                    value={formData.country}
+                    value={formdata.country}
                     onChange={handleChange}
                     className="custom-select"
                   >
@@ -137,9 +134,8 @@ const Contact = () => {
                   </label>
                   <input
                     type="text"
-                    id="city"
                     name="city"
-                    value={formData.city}
+                    value={formdata.city}
                     onChange={handleChange}
                     placeholder="Enter your city"
                     className="custom-input"
@@ -151,9 +147,8 @@ const Contact = () => {
                   </label>
                   <input
                     type="text"
-                    id="whatsapp"
                     name="whatsapp"
-                    value={formData.whatsapp}
+                    value={formdata.whatsapp}
                     onChange={handleChange}
                     placeholder="Enter your WhatsApp number with country code"
                     className="custom-input"
@@ -165,9 +160,8 @@ const Contact = () => {
                     How can we help you lead a happy life? <span>*</span>
                   </label>
                   <textarea
-                    id="happylife"
                     name="happylife"
-                    value={formData.happylife}
+                    value={formdata.happylife}
                     onChange={handleChange}
                     placeholder="Enter your answer"
                     className="custom-textarea"
@@ -179,17 +173,6 @@ const Contact = () => {
               </form>
             </div>
           </div>
-          {exists && (
-            <div>
-              <h1>
-                Your data already exists! Please wait for some time. Our team
-                will get back to you.
-              </h1>
-            </div>
-          )}
-          {error && (
-            <h1>Please fill all the required fields to submit the details.</h1>
-          )}
         </>
       )}
     </>
