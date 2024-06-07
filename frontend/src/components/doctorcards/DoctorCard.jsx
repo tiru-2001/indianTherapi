@@ -4,7 +4,7 @@ import { FaLocationDot } from "react-icons/fa6";
 const DoctorCard = ({ item }) => {
   return (
     <section className="doctor_card">
-      <section className="card_image">
+      <section className="card_image ">
         <img src={`http://api.indiatherapist.com/uploads/${item?.image}`} />
       </section>
       <section className="card_content">
