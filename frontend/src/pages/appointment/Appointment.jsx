@@ -198,14 +198,14 @@ const Appointment = () => {
                     type="radio"
                     name="gender"
                   />{" "}
-                  female
+                  Female
                   <input
                     value="male"
                     onChange={formOnchange}
                     type="radio"
                     name="gender"
                   />{" "}
-                  male
+                  Male
                 </div>
               </section>
               <button>Pay Now</button>
