@@ -64,7 +64,7 @@ function Footer() {
               </p>
             </section>
             <section className="contact-info">
-              <p>Mon - Fri: ( 9am - 6pm IST )</p>
+              <p>Mon - Fri: ( 9am - 9pm IST )</p>
               <p>Sat & Sun: CLOSED</p>
             </section>
           </section>
