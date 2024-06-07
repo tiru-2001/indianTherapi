@@ -37,7 +37,10 @@ const Termsandcond = () => {
           ))}
         </div>
         <h1>CONTACT INFORMATION:</h1>
-        <p>Registered Address: Krishnagiri, Tamil Nadu - 635204</p>
+        <p>
+          Registered Address: No 43 Beereshwara Nagar 10th cross road. JP nagar
+          7th Phase, Chunchgatta, Bangalore 560078.
+        </p>
 
         <p>Phone Number: +91-9384838353 </p>
         <p>

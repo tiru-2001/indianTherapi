@@ -144,7 +144,7 @@ const Appointment = () => {
                   <input onChange={formOnchange} name="date" type="date" />
                 </label>
                 <label>
-                  <h4>Country</h4>
+                  <h4>Country:</h4>
                   <input
                     placeholder="country"
                     onChange={formOnchange}
