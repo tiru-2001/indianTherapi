@@ -51,7 +51,10 @@ function Footer() {
             </section> */}
             <section className="contact-info flex flex-col">
               <p>
-                Phone: <a href="tel:+919384838353">+919384838353</a>
+                Phone:{" "}
+                <a href="https://api.whatsapp.com/send?phone=919384838353">
+                  +919384838353
+                </a>
               </p>
               <p>
                 Mail:{" "}
@@ -61,7 +64,7 @@ function Footer() {
               </p>
             </section>
             <section className="contact-info">
-              <p>Mon - Fri: ( 9am - 6pm )</p>
+              <p>Mon - Fri: ( 9am - 6pm IST )</p>
               <p>Sat & Sun: CLOSED</p>
             </section>
           </section>
@@ -96,7 +99,7 @@ function Footer() {
           </section>
           <section className="developed">
             <small>
-              <a href="https://websort.in/">Developed by websort</a>{" "}
+              <a href="https://thewebsort.com/">Developed by websort</a>{" "}
             </small>
           </section>
         </section>
