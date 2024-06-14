@@ -1,3 +1,22 @@
+@import "../../globalscss/global.scss";
+@import "../../globalscss/responsivemixins.scss";
 .cancelPayment {
-  margin: 100px 0px;
+  height: calc(100vh - 80px);
+
+  @include flex(row, center, center, 0px);
+  .cancel_payment_innercontainer {
+    width: 50%;
+    @include flex(column, center, center, 10px);
+    width: 40%;
+    border-radius: 10px;
+    box-shadow: 5px 5px 30px 5px gray;
+    padding: 50px 0px;
+    h1 {
+      color: red;
+      font-weight: bold;
+    }
+    p {
+      font-weight: bold;
+    }
+  }
 }

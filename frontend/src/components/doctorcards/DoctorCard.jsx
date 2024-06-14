@@ -21,7 +21,7 @@ const DoctorCard = ({ item }) => {
         </section>
         <section className="card_bottom">
           <p>{`Languages: ${item?.languages.join(",")}`}</p>
-          <p> Experience:{item?.experience} </p>
+          <p> Experience:{item?.experience} years</p>
           <strong>{item?.price} $ per session</strong>
         </section>
         <Link className="link" to={`/private/book-appointment/${item._id}`}>

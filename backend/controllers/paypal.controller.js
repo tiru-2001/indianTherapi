@@ -148,7 +148,7 @@ const successController = async (req, res) => {
               );
               return res.redirect(
                 `https://indiatherapist.com/successpayment?success=${encodeURIComponent(
-                  "payment Success"
+                  `${data.date} `
                 )}`
               );
             } catch (err) {

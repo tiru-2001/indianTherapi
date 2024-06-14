@@ -39,6 +39,29 @@ const Therapist = () => {
       document.head.removeChild(keywordsMeta);
     };
   }, []);
+
+  const getFilterBased = async (data1) => {
+    console.log(data1);
+    const { category, language, experience } = data1;
+    try {
+      const config = {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      };
+
+      const { data } = await configuredUrl.get(
+        `/therapist/get-based?language=${language}&category=${category}&experi=${experience}`
+      );
+
+      if (data.success) {
+        setTherapist(data.result);
+        console.log(data);
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  };
   return (
     <>
       {loading ? (
@@ -46,7 +69,7 @@ const Therapist = () => {
       ) : (
         <section className="doctors_container">
           <section className="top1">
-            <Category />
+            <Category getFilterBased={getFilterBased} />
           </section>
           <section className="bottom">
             {therapist &&

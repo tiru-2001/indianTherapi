@@ -20,10 +20,15 @@ const CancelPayment = () => {
       {loading ? (
         <Loader />
       ) : (
-        <section className="cancelPayment">
+        <section>
           {cancel ? (
             <>
-              <div>{cancel}</div>
+              <div className="cancelPayment">
+                <div className="cancel_payment_innercontainer">
+                  <h1>Something went wrong</h1>
+                  <p>Please contact our customer care +919384838353</p>
+                </div>
+              </div>
             </>
           ) : (
             <>

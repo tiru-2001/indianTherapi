@@ -134,8 +134,8 @@ const right_content2 = {
 const homeCarouselData = [
   {
     img: "/car1.jpg",
-    title: "Councelling for your Better Life",
-    desc: "Seeking counseling enhances well-being and leads to a fulfilling life",
+    title: "Our Mission is to create mental health awareness among NRIs",
+    desc: "Our mission is to raise awareness about mental health among Non-Resident Indians(NRIs),promoting understanding, support and access to mental health resources within the community",
   },
   {
     img: "/car2.jpg",

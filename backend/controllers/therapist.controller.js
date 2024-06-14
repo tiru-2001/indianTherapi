@@ -87,4 +87,57 @@ const getIndividualTherapist = async (req, res) => {
   }
 };
 
-export { addTherapist, getAllTherapists, getIndividualTherapist };
+//get therapist based on conditions
+
+const getBasedOnCondition = async (req, res) => {
+  const { language, category, experi } = req.query;
+
+  if (language === "" && category === "" && experi === "zero") {
+    const allTherapist = await therapistmodel.find();
+    return res.status(200).send({
+      messaage: "data fetched successfully",
+      success: true,
+      allTherapist,
+    });
+  }
+
+  const query_language = language || "";
+  const query_category = category || "";
+  const experience = experi || "-1";
+
+  let query = {
+    experience: { $gt: experience },
+  };
+
+  if (query_language) {
+    query.languages = query_language;
+  }
+
+  if (query_category) {
+    query.description = { $regex: query_category, $options: "i" }; // Case-insensitive search
+  }
+
+  console.log(query);
+  try {
+    const result = await therapistmodel.find(query);
+    console.log(result);
+    return res.status(200).send({
+      success: true,
+      message: "Data fetched successfully",
+      result,
+    });
+  } catch (err) {
+    console.log(err.message);
+    return res.status(400).send({
+      success: false,
+      message: err.message,
+    });
+  }
+};
+
+export {
+  addTherapist,
+  getAllTherapists,
+  getBasedOnCondition,
+  getIndividualTherapist,
+};

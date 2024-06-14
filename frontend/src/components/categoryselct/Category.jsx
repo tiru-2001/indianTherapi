@@ -1,14 +1,31 @@
 import "./category.scss";
+import { useState } from "react";
 
-const Category = () => {
+export default function Category({ getFilterBased }) {
+  const [form, setForm] = useState({
+    category: "",
+    language: "",
+    experience: "zero",
+  });
+
+  const onChangeFilter = (e) => {
+    setForm({
+      ...form,
+      [e.target.id]: e.target.value,
+    });
+  };
+
+  const fetchCategory = () => {
+    getFilterBased(form);
+  };
+
   return (
     <>
-      {/* options section */}
       <section className="category_maincontainer">
         <section className="booking-container">
           <label htmlFor="language" className="option">
-            <select id="language">
-              <option value="lang" class="bold-option">
+            <select id="language" name="language" onChange={onChangeFilter}>
+              <option value="lang" className="bold-option">
                 Language
               </option>
               <option value="hindi">Hindi</option>
@@ -19,8 +36,8 @@ const Category = () => {
           </label>
 
           <label htmlFor="category" className="option">
-            <select id="category">
-              <option value="category" class="bold-option">
+            <select id="category" onChange={onChangeFilter}>
+              <option value="category" className="bold-option">
                 Category
               </option>
               <option value="couple">Couple and Marriage Counseling</option>
@@ -36,20 +53,21 @@ const Category = () => {
           </label>
 
           <label htmlFor="experience" className="option">
-            <select id="experience">
-              <option value="expe" class="bold-option">
+            <select id="experience" onChange={onChangeFilter}>
+              <option value="expe" className="bold-option">
                 Years of Experience
               </option>
-              <option value="one">1 year</option>
-              <option value="two">2 years</option>
-              <option value="three">3 years</option>
+              <option value="1">1 years</option>
+              <option value="2">2 years</option>
+              <option value="3">3 years</option>
             </select>
           </label>
-          <button type="submit">Search</button>
+          <button type="submit" onClick={fetchCategory}>
+            Search
+          </button>
         </section>
         {/* booking button section */}
       </section>
     </>
   );
-};
-export default Category;
+}
