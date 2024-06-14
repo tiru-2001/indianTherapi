@@ -5,7 +5,7 @@ export default function Category({ getFilterBased }) {
   const [form, setForm] = useState({
     category: "",
     language: "",
-    experience: "zero",
+    experience: "",
   });
 
   const onChangeFilter = (e) => {
