@@ -77,7 +77,9 @@ export default function Eap() {
             <h3>Trusted by 100+ Corporates</h3>
           </section>
           <section className="visit_link">
-            <p>some link</p>
+            <Link to="/contact-us">
+              <p>contact us</p>
+            </Link>
           </section>
         </section>
       </section>
