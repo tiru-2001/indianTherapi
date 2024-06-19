@@ -15,6 +15,7 @@ import {
   RightContent,
   HomeCarousel,
   DoctorCard,
+  BlogsCard,
 } from "../../components/index";
 import blog01 from "../../assets/images/blog01.jpg";
 import blog02 from "../../assets/images/blog02.jpg";
@@ -29,12 +30,25 @@ import { useEffect } from "react";
 const Home = () => {
   const [therapist, setTherapist] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [news, setNews] = useState([]);
   const getAllTherapist = async () => {
     try {
       const { data } = await configuredUrl.get("/therapist/get-therapist");
       if (data.success) {
         setLoading(false);
         setTherapist(data.allTherapist);
+      }
+    } catch (e) {
+      setLoading(false);
+    }
+  };
+  const getAllNews = async () => {
+    try {
+      const { data } = await configuredUrl.get("/news/getNews");
+      console.log(news);
+      if (data.success) {
+        setLoading(false);
+        setNews(data.news);
       }
     } catch (e) {
       setLoading(false);
@@ -51,7 +65,9 @@ const Home = () => {
       "Online therapy India, therapist directory, mental health support, counseling services, Indian therapists, emotional well-being, therapy sessions, confidential counseling, therapy specialties, mental health resources, virtual therapy sessions, remote counseling, trusted therapists, personal growth, LGBTQ+ affirming therapists";
     document.head.appendChild(descriptionMeta);
     getAllTherapist();
+    getAllNews();
     setLoading(true);
+
     return () => {
       document.head.removeChild(descriptionMeta);
     };
@@ -238,40 +254,43 @@ const Home = () => {
               </section>
             </section>
           </section>
-          {/* Section 14 */}
-          <div className="section14_container">
-            <div className="heading_14">
-              <div className="title">FROM THE BLOG</div>
-              <div className="subtitle_large">News and Articles</div>
-            </div>
-            <div className="card_section">
-              <Newscard
-                className="card"
-                img={blog01}
-                title="Blog 01"
-                author="Admin"
-                date="17"
-                month="Sept"
-                newstitle="Lorem ipsum dolor sit amet, consectetur adipisicing elit."
-              />
-              <Newscard
-                img={blog02}
-                title="Blog 01"
-                author="Admin"
-                date="17"
-                month="Sept"
-                newstitle="Lorem ipsum dolor sit amet, consectetur adipisicing elit."
-              />
-              <Newscard
-                img={blog03}
-                title="Blog 01"
-                author="Admin"
-                date="17"
-                month="Sept"
-                newstitle="Lorem ipsum dolor sit amet, consectetur adipisicing elit."
-              />
-            </div>
-          </div>
+
+          <section className="section12_container">
+            <section className="section12_heading">
+              <h1 className="main_heading">Blogs</h1>
+            </section>
+            <section className="section12_content">
+              <HomeCarousel
+                spaceBetween={30}
+                slidesPerView={1}
+                breakpoints={{
+                  500: {
+                    slidesPerView: 2,
+                    spaceBetween: 10,
+                  },
+
+                  768: {
+                    slidesPerView: 2,
+                    spaceBetween: 40,
+                  },
+                  1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 20,
+                  },
+                  1200: {
+                    slidesPerView: 4,
+                    spaceBetween: 20,
+                  },
+                }}
+              >
+                {news?.map((item, ind) => (
+                  <SwiperSlide key={ind}>
+                    <BlogsCard item={item} />
+                  </SwiperSlide>
+                ))}
+              </HomeCarousel>
+            </section>
+          </section>
           {/* Section 15 */}
           <section className="section15_container">
             <div className="heading15">
