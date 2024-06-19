@@ -16,7 +16,7 @@ connectToDb();
 const port = process.env.PORT || 8800;
 const app = express();
 app.use(cookieParser());
-
+//
 app.use(
   cors({
     origin: "https://indiatherapist.com",
