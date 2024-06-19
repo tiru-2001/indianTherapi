@@ -8,6 +8,7 @@
     width: 100%;
     margin-top: 10px;
     height: 500px;
+    object-fit: cover;
   }
   h1 {
     font-size: 30px;
@@ -15,5 +16,12 @@
   }
   p {
     margin-top: 10px;
+    line-height: 30px;
+    color: var(--icon-bg);
+    font-weight: 400;
+  }
+  .card2 {
+    box-shadow: 0px 40px 40px gray;
+    padding: 20px;
   }
 }

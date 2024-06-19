@@ -21,12 +21,14 @@ export default function Blog() {
   return (
     <div className="blog">
       <h1 className="head">News Blog</h1>
-      <section>
-        <img src={blog.imageUrl} alt="blog image" />
-      </section>
-      <div>
-        <h1>{blog.title}</h1>
-        <p>{blog.content}</p>
+      <div className="card2">
+        <section>
+          <img src={blog.imageUrl} alt="blog image" />
+        </section>
+        <div>
+          <h1>{blog.title}</h1>
+          <p>{blog.content}</p>
+        </div>
       </div>
     </div>
   );

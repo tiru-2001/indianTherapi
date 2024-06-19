@@ -14,11 +14,13 @@ const BlogsCard = ({ item }) => {
         </section>
         <section className="content">
           <div className="creds">
-            <h1>{month + " " + date + ""}</h1>
-            <h1>{author}</h1>
+            <h1 className="title1">{title}.</h1>
+
+            <h1 className="author1">{author}</h1>
           </div>
-          <h1>{title}</h1>
-          <p>{content}</p>
+
+          <p>{`${content.slice(0, 200)}.....`}</p>
+          <h1 className="date1">{month + " " + date + ""}</h1>
         </section>
       </section>
     </Link>
