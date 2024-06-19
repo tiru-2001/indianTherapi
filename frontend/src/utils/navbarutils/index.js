@@ -18,7 +18,7 @@ const quickLinks = [
   },
   { path: "/contact-us", title: "Contact us" },
   { path: "/eap", title: "EAP" },
-  { path: "/blog", title: "Blogs" },
+  { path: "/blogs", title: "Blogs" },
   { path: "/termsandcond", title: "Terms and condition" },
 ];
 
