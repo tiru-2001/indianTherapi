@@ -19,7 +19,7 @@ app.use(cookieParser());
 
 app.use(
   cors({
-    origin: "https://api.indiatherapist.com",
+    origin: "https://indiatherapist.com",
     credentials: true,
   })
 );
