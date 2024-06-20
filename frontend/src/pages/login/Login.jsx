@@ -6,6 +6,9 @@ import configuredUrl from "../../utils/request/request";
 import { useNavigate } from "react-router-dom";
 import { usestate } from "../../statemanagement/UseAuth";
 import { useLocation } from "react-router-dom";
+import { IoMdEye } from "react-icons/io";
+import { HiEyeOff } from "react-icons/hi";
+
 const Login = () => {
   const location = useLocation();
   const { setUser } = useContext(usestate);
@@ -13,6 +16,7 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
   const [error, setError] = useState(null);
+  const [type, setType] = useState(false);
 
   const handleLogin = async () => {
     try {
@@ -62,18 +66,6 @@ const Login = () => {
     <section>
       <section className="app__login-container">
         <section className="app__login-subcontainer">
-          {/* <section className="left">
-            <section className="title-container">
-              <h2 className="sub_heading">
-                Unlock Your World: Sign in to Access Your Profile
-              </h2>
-              <p>
-                Get ready to dive back into your personalized experience. Sign
-                in now to unlock exclusive features tailored just for you. Your
-                profile awaits!
-              </p>
-            </section>
-          </section> */}
           <section className="right">
             <section className="app__right-subContainer">
               <section className="app__sign-title">
@@ -85,24 +77,43 @@ const Login = () => {
               </section>
               <section className="app__form">
                 <form className="form-container">
-                  <input
-                    required
-                    type="email"
-                    value={email}
-                    onChange={(e) => {
-                      setEmail(e.target.value);
-                    }}
-                    placeholder="Enter your email"
-                  />
-                  <input
-                    required
-                    value={password}
-                    onChange={(e) => {
-                      setPassword(e.target.value);
-                    }}
-                    placeholder="Enter your password"
-                    type="password"
-                  />
+                  <div>
+                    <input
+                      required
+                      type="email"
+                      value={email}
+                      onChange={(e) => {
+                        setEmail(e.target.value);
+                      }}
+                      placeholder="Enter your email"
+                    />
+                  </div>
+                  <div className="pass">
+                    <input
+                      required
+                      value={password}
+                      onChange={(e) => {
+                        setPassword(e.target.value);
+                      }}
+                      placeholder="Enter your password"
+                      type={type ? "text" : "password"}
+                    />
+                    {type ? (
+                      <HiEyeOff
+                        className="icons"
+                        onClick={() => {
+                          setType((prev) => !prev);
+                        }}
+                      />
+                    ) : (
+                      <IoMdEye
+                        className="icons"
+                        onClick={() => {
+                          setType((prev) => !prev);
+                        }}
+                      />
+                    )}
+                  </div>
                 </form>
               </section>
 

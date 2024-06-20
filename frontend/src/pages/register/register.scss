@@ -49,18 +49,25 @@
           .form-container {
             @include flex(column, null, null, 20px);
 
-            input {
-              padding: 10px 5px;
-              border: none;
+            div {
               border-bottom: 1px solid gray;
-              font-size: 1rem;
-              background-color: transparent;
-              @include break(700px) {
-                width: 100%;
-              }
-              &:focus {
-                outline: 1px solid gray;
+
+              input {
+                padding: 10px 5px;
                 border: none;
+                font-size: 1rem;
+                outline: none;
+                background-color: transparent;
+                @include break(700px) {
+                  width: 100%;
+                }
+              }
+            }
+            .pass {
+              @include flex(row, center, space-between, 10px);
+              .icons {
+                font-size: 1.5rem;
+                cursor: pointer;
               }
             }
           }
@@ -86,50 +93,3 @@
     }
   }
 }
-
-//  // // .right {
-//   flex: 1;
-//   @include flex(column, center, center, 10px);
-//   padding: 10px 30px;
-//   @include break(1200px) {
-//     width: 50%;
-//     text-align: left;
-//   }
-//   @include break(600px) {
-//     width: 100%;
-//   }
-//   .title-container {
-//     h1 {
-//       // color: var(--flower-bg);
-//       text-align: start;
-//       font-weight: 600;
-//       @include break(1200px) {
-//         text-align: left;
-//       }
-//       @include break(320px) {
-//         font-size: 2.3rem;
-//         width: 100%;
-//       }
-//       @include break(250px) {
-//         word-break: break-all;
-//       }
-//     }
-//     p {
-//       margin: 20px 0px;
-//       padding: 10px 0px;
-//       color: rgb(84, 83, 83);
-//       font-size: 1.2rem;
-
-//       font-weight: 500;
-//       @include break(700px) {
-//         font-size: 1.6rem;
-//       }
-//       @include break(320px) {
-//         font-size: 1.3rem;
-//       }
-//       @include break(250px) {
-//         word-break: break-all;
-//       }
-//     }
-//   }
-//   // }

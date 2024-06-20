@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import configuredUrl from "../../utils/request/request";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import { IoMdEye } from "react-icons/io";
+import { HiEyeOff } from "react-icons/hi";
 const Register = () => {
   const navigate = useNavigate();
   const [name, setName] = useState("");
@@ -10,6 +12,8 @@ const Register = () => {
   const [password, setPassword] = useState("");
   const [phone, setPhone] = useState("");
   const [error, setError] = useState(null);
+  const [confirmPass, setConfirmPass] = useState("");
+  const [type, setType] = useState(false);
 
   let passwordRegex =
     /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
@@ -25,6 +29,9 @@ const Register = () => {
       }
       if (phone.length < 10) {
         er += "phone must be at least 10 characters";
+      }
+      if (password !== confirmPass) {
+        er += "Passwords and confirm Passwords are not matching";
       }
       if (er.length) {
         setError(er);
@@ -77,49 +84,95 @@ const Register = () => {
             </section>
             <section className="app__form">
               <form className="form-container">
-                <input
-                  required
-                  onChange={(e) => {
-                    setName(e.target.value);
-                  }}
-                  placeholder="Enter the name"
-                  id="name"
-                  type="text"
-                  value={name}
-                />
+                <div>
+                  <input
+                    required
+                    onChange={(e) => {
+                      setName(e.target.value);
+                    }}
+                    placeholder="Enter the name"
+                    id="name"
+                    type="text"
+                    value={name}
+                  />
+                </div>
+                <div>
+                  <input
+                    required
+                    onChange={(e) => {
+                      setEmail(e.target.value);
+                    }}
+                    placeholder="Enter the email"
+                    id="email"
+                    type="email"
+                    value={email}
+                  />
+                </div>
 
-                <input
-                  required
-                  onChange={(e) => {
-                    setEmail(e.target.value);
-                  }}
-                  placeholder="Enter the email"
-                  id="email"
-                  type="email"
-                  value={email}
-                />
-
-                <input
-                  required
-                  onChange={(e) => {
-                    setPassword(e.target.value);
-                  }}
-                  placeholder="Enter the password"
-                  id="pass"
-                  type="password"
-                  value={password}
-                />
-
-                <input
-                  required
-                  onChange={(e) => {
-                    setPhone(e.target.value);
-                  }}
-                  placeholder="Enter the number"
-                  id="phone"
-                  type="number"
-                  value={phone}
-                />
+                <div className="pass">
+                  <input
+                    required
+                    value={password}
+                    onChange={(e) => {
+                      setPassword(e.target.value);
+                    }}
+                    placeholder="Enter your password"
+                    type={type ? "text" : "password"}
+                  />
+                  {type ? (
+                    <HiEyeOff
+                      className="icons"
+                      onClick={() => {
+                        setType((prev) => !prev);
+                      }}
+                    />
+                  ) : (
+                    <IoMdEye
+                      className="icons"
+                      onClick={() => {
+                        setType((prev) => !prev);
+                      }}
+                    />
+                  )}
+                </div>
+                <div className="pass">
+                  <input
+                    required
+                    value={confirmPass}
+                    onChange={(e) => {
+                      setConfirmPass(e.target.value);
+                    }}
+                    placeholder="Confirm password"
+                    type={type ? "text" : "password"}
+                  />
+                  {type ? (
+                    <HiEyeOff
+                      className="icons"
+                      onClick={() => {
+                        setType((prev) => !prev);
+                      }}
+                    />
+                  ) : (
+                    <IoMdEye
+                      className="icons"
+                      onClick={() => {
+                        setType((prev) => !prev);
+                      }}
+                    />
+                  )}
+                </div>
+                <div>
+                  <input
+                    required
+                    onChange={(e) => {
+                      setPhone(e.target.value);
+                    }}
+                    placeholder="Enter whatsapp number"
+                    id="phone"
+                    type="tel"
+                    value={phone}
+                  />
+                </div>
 
                 {error && <section style={{ color: "red" }}>{error}</section>}
 
