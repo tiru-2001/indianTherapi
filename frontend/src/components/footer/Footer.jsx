@@ -1,14 +1,14 @@
-import React from "react";
-import "./footer.scss";
-import { Link } from "react-router-dom";
+import React from 'react';
+import './footer.scss';
+import { Link } from 'react-router-dom';
 import {
   IoCall,
   FaFacebookF,
   FaLinkedin,
   FaInstagram,
   FaTwitter,
-} from "../../assets/icons/index";
-import { quickLinks } from "../../utils/navbarutils";
+} from '../../assets/icons/index';
+import { quickLinks } from '../../utils/navbarutils';
 
 function Footer() {
   return (
@@ -46,18 +46,15 @@ function Footer() {
           <section className="col">
             <section className="header">Contact Info</section>
 
-            {/* <section className="contact-info">
-              23 West Street, REDHILL, RH70 9WM
-            </section> */}
             <section className="contact-info flex flex-col">
               <p>
-                Phone:{" "}
+                Phone:{' '}
                 <a href="https://api.whatsapp.com/send?phone=919384838353">
                   +919384838353
                 </a>
               </p>
               <p>
-                Mail:{" "}
+                Mail:{' '}
                 <a href="mailto:customerservice@indiatherapist.com">
                   customerservice@indiatherapist.com
                 </a>
@@ -76,6 +73,13 @@ function Footer() {
                   {item.title}
                 </Link>
               ))}
+              <a
+                href="https://drive.google.com/file/d/1zaDdifu7lTHspJPOlzMdP-ih4CJV0P6_/view?usp=sharing"
+                target="_blank"
+                className="link"
+              >
+                Terms and Condition
+              </a>
             </section>
           </section>
           <section className="col">
@@ -99,7 +103,7 @@ function Footer() {
           </section>
           <section className="developed">
             <small>
-              <a href="https://thewebsort.com/">Developed by websort</a>{" "}
+              <a href="https://thewebsort.com/">Developed by websort</a>{' '}
             </small>
           </section>
         </section>

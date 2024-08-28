@@ -1,7 +1,7 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import {
   Login,
@@ -18,13 +18,12 @@ import {
   Eap,
   Admin,
   Addtherapist,
-  Termsandcond,
   CancelPayment,
   SuccessPayment,
   Addblog,
   Blog,
-} from "./pages";
-import { Addbtn } from "./components";
+} from './pages';
+import { Addbtn } from './components';
 
 const App = () => {
   return (
@@ -53,7 +52,6 @@ const App = () => {
             <Route path="blog/:slug" element={<Blog />} />
             <Route path="register" element={<Register />} />
             <Route path="eap" element={<Eap />} />
-            <Route path="termsandcond" element={<Termsandcond />} />
             <Route path="cancelpayment" element={<CancelPayment />} />
             <Route path="successpayment" element={<SuccessPayment />} />
           </Route>
