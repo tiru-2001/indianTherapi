@@ -32,5 +32,11 @@
     .contentbox {
       padding: 15px 0;
     }
+    ul {
+      li {
+        list-style-type: disc !important;
+        font-weight: 300;
+      }
+    }
   }
 }

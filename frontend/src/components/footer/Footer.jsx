@@ -96,7 +96,7 @@ function Footer() {
           </section>
           <section className="developed">
             <small>
-              <a href="https://thewebsort.com/">Developed by websort</a>{' '}
+              <a href="https://thewebsort.com/">Developed by websort</a>
             </small>
           </section>
         </section>

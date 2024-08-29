@@ -16,19 +16,22 @@ const TermsandCondition = () => {
                 Please read the below-mentioned Website Terms & Conditions
                 carefully before availing the Services at the Website
               </h1>
+
               <ol>
-                {termsAndCondition.map((item, inde) => {
+                {termsAndCondition.map((item, ind) => {
                   if (item.subpoint) {
                     return (
-                      <div key={inde} className="contentbox">
-                        <li>{item.point}</li>
+                      <li key={ind}>
+                        {item.point}
                         <ul>
-                          {item.subpoint.map((subpoint, ind) => (
-                            <li key={ind}>{subpoint}</li>
+                          {item.subpoint.map((subpoint, inde) => (
+                            <li key={inde}>{subpoint}</li>
                           ))}
                         </ul>
-                      </div>
+                      </li>
                     );
+                  } else {
+                    return <li key={ind}>{item.point}</li>;
                   }
                 })}
               </ol>
