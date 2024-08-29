@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
-import "./doctor.scss";
-import { FaLocationDot } from "react-icons/fa6";
+import { Link } from 'react-router-dom';
+import './doctor.scss';
+import { FaLocationDot } from 'react-icons/fa6';
 const DoctorCard = ({ item }) => {
   return (
     <section className="doctor_card">
@@ -20,9 +20,9 @@ const DoctorCard = ({ item }) => {
           </section>
         </section>
         <section className="card_bottom">
-          <p>{`Languages: ${item?.languages.join(",")}`}</p>
+          <p>{`Languages: ${item?.languages.join(',')}`}</p>
           <p> Experience:{item?.experience} years</p>
-          <strong>{item?.price} $ per session</strong>
+          <strong>{item?.price} rs per session</strong>
         </section>
         <Link className="link" to={`/private/book-appointment/${item._id}`}>
           Book Now
@@ -34,7 +34,7 @@ const DoctorCard = ({ item }) => {
 
 export default DoctorCard;
 
-description: "marriage counselling";
-languages: ["english"];
-location: "Bengaluru";
-name: "rahul";
+description: 'marriage counselling';
+languages: ['english'];
+location: 'Bengaluru';
+name: 'rahul';
