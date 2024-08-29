@@ -7,7 +7,6 @@ import {
 const TermsandCondition = () => {
   return (
     <section>
-      return (
       <>
         <div className="termcontainer">
           <div className="subcontainer">
