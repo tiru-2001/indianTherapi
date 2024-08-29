@@ -1,19 +1,19 @@
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import "./appointment.scss";
-import configuredUrl from "../../utils/request/request";
-import Loader from "../../components/loader/Loader";
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import './appointment.scss';
+import configuredUrl from '../../utils/request/request';
+import Loader from '../../components/loader/Loader';
 const Appointment = () => {
   const [therapist, setTherapist] = useState();
 
   const [formdata, setFormData] = useState({
-    name: "",
-    phone: "",
-    email: "",
-    age: "",
-    date: "",
-    country: "",
-    gender: "",
+    name: '',
+    phone: '',
+    email: '',
+    age: '',
+    date: '',
+    country: '',
+    gender: '',
   });
   const [loading, setLoading] = useState(false);
   const { id } = useParams();
@@ -29,7 +29,7 @@ const Appointment = () => {
     } catch (e) {
       setLoading(false);
 
-      console.log("error");
+      console.log('error');
       console.log(e);
     }
   };
@@ -41,7 +41,7 @@ const Appointment = () => {
     e.preventDefault();
     try {
       if (therapist) {
-        const { data } = await configuredUrl.post("/pay/payment", {
+        const { data } = await configuredUrl.post('/pay/payment', {
           name: formdata.name,
           number: formdata.number,
           age: formdata.age,
@@ -57,13 +57,13 @@ const Appointment = () => {
 
         if (data.success) {
           setFormData({
-            name: "",
-            phone: "",
-            email: "",
-            age: "",
-            date: "",
-            country: "",
-            gender: "",
+            name: '',
+            phone: '',
+            email: '',
+            age: '',
+            date: '',
+            country: '',
+            gender: '',
           });
           window.location.href = data.link;
         }
@@ -71,13 +71,13 @@ const Appointment = () => {
     } catch (e) {
       setLoading(false);
       setFormData({
-        name: "",
-        phone: "",
-        email: "",
-        age: "",
-        date: "",
-        country: "",
-        gender: "",
+        name: '',
+        phone: '',
+        email: '',
+        age: '',
+        date: '',
+        country: '',
+        gender: '',
       });
       console.log(e);
     }
@@ -93,15 +93,15 @@ const Appointment = () => {
   useEffect(() => {
     setLoading(true);
     getIndividualDoctor();
-    document.title = "Appointment Page";
-    const descriptionMeta = document.createElement("meta");
-    descriptionMeta.name = "description";
+    document.title = 'Appointment Page';
+    const descriptionMeta = document.createElement('meta');
+    descriptionMeta.name = 'description';
     descriptionMeta.content =
       "Schedule appointments with IndiaTherapist's professional therapists to begin your journey towards better mental health.";
-    const keywordsMeta = document.createElement("meta");
-    keywordsMeta.name = "keywords";
+    const keywordsMeta = document.createElement('meta');
+    keywordsMeta.name = 'keywords';
     keywordsMeta.content =
-      "IndiaTherapist, appointments, schedule, therapy, mental health";
+      'IndiaTherapist, appointments, schedule, therapy, mental health';
     document.head.appendChild(descriptionMeta);
     document.head.appendChild(keywordsMeta);
 
@@ -132,7 +132,7 @@ const Appointment = () => {
               <h3>{therapist?.location}</h3>
               <h3> {therapist?.experience} experience</h3>
               <h2>
-                <span>{therapist?.price} $</span> per session
+                <span>{therapist?.price} rs</span> per session
               </h2>
             </section>
           </section>
@@ -197,14 +197,14 @@ const Appointment = () => {
                     onChange={formOnchange}
                     type="radio"
                     name="gender"
-                  />{" "}
+                  />{' '}
                   Female
                   <input
                     value="male"
                     onChange={formOnchange}
                     type="radio"
                     name="gender"
-                  />{" "}
+                  />{' '}
                   Male
                 </div>
               </section>
