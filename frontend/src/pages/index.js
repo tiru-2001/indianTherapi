@@ -16,6 +16,7 @@ import SuccessPayment from './successpayment/SuccessPayment';
 import CancelPayment from './cancelpayment/CancelPayment';
 import Addblog from './addblogs/Addblog';
 import Blog from './blog/Blog';
+import TermsandCondition from './TermsandCondition/TermsandCondition';
 export {
   Home,
   Parent,
@@ -35,4 +36,5 @@ export {
   SuccessPayment,
   Addblog,
   Blog,
+  TermsandCondition,
 };

@@ -19,6 +19,7 @@ const quickLinks = [
   { path: '/contact-us', title: 'Contact us' },
   { path: '/eap', title: 'EAP' },
   { path: '/blogs', title: 'Blogs' },
+  { path: '/termsandcondition', title: 'Terms and Conditions' },
 ];
 
 export { navLinks, quickLinks };

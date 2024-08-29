@@ -73,13 +73,6 @@ function Footer() {
                   {item.title}
                 </Link>
               ))}
-              <a
-                href="https://drive.google.com/file/d/1zaDdifu7lTHspJPOlzMdP-ih4CJV0P6_/view?usp=sharing"
-                target="_blank"
-                className="link"
-              >
-                Terms and Condition
-              </a>
             </section>
           </section>
           <section className="col">
