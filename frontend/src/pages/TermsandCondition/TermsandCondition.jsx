@@ -2,6 +2,7 @@ import './termsandcondition.scss';
 import {
   termsAndCondition,
   privacyPolicy,
+  refund,
 } from '../../utils/termsandconditions';
 
 const TermsandCondition = () => {
@@ -45,10 +46,18 @@ const TermsandCondition = () => {
                 </div>
               ))}
             </div>
+
+            <div>
+              <h2>Refund and Cancellation policy</h2>
+              <ol>
+                {refund.map((item, ind) => (
+                  <li key={ind}>{item}</li>
+                ))}
+              </ol>
+            </div>
           </div>
         </div>
       </>
-      );
     </section>
   );
 };
